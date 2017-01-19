@@ -8,12 +8,7 @@
 module.exports = {
 
   attributes: {
-    id: {
-      type: 'integer',
-      primaryKey: true,
-      unique: true,
-      columnName: 'id'
-    },
+
     nombre: {
       type: 'string',
       required: true
