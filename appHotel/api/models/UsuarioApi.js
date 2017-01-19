@@ -16,27 +16,21 @@ module.exports = {
     },
     nombre: {
       type: 'string',
-      columnName: 'nombre',
       required: true
 
     },
     apellido: {
       type: 'string',
-      columnName: 'apellido',
       required: true
 
     },
     cedula: {
       type: 'string',
-      columnName: 'cedula',
       unique: true,
       required: true
 
     },
-    facturas: {
-      collection: 'facturaapi',
-      via: 'idComprador'
-    },
+
     usuario: {
       type: 'string',
       unique: true,
