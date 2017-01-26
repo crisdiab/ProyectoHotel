@@ -6,16 +6,16 @@
  */
 
 module.exports = {
-  tableName: 'reserva',
-  autoCreatedAt: false,
-  autoUpdatedAt: false,
+  // tableName: 'reserva',
+  // autoCreatedAt: false,
+  // autoUpdatedAt: false,
   attributes: {
-    IDRESERVA: {
-      type: 'integer',
-      required: true,
-      primaryKey: true,
-      size: 11
-    },
+    // IDRESERVA: {
+    //   type: 'integer',
+    //   required: true,
+    //   primaryKey: true,
+    //   size: 11
+    // },
     IDCLIENTE: {
       type: 'integer',
       required: false,

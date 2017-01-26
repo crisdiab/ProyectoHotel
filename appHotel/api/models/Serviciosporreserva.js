@@ -6,9 +6,9 @@
  */
 
 module.exports = {
-  tableName: 'serviciosporreserva',
-  autoCreatedAt: false,
-  autoUpdatedAt: false,
+  // tableName: 'serviciosporreserva',
+  // autoCreatedAt: false,
+  // autoUpdatedAt: false,
   attributes: {
     IDSERVICIORESERVA: {
       type: 'integer',

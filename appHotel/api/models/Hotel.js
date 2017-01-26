@@ -6,16 +6,16 @@
  */
 
 module.exports = {
-  tableName: 'hotel',
-  autoCreatedAt: false,
-  autoUpdatedAt: false,
+  // tableName: 'hotel',
+  // autoCreatedAt: false,
+  // autoUpdatedAt: false,
   attributes: {
-    IDHOTEL: {
-      type: 'integer',
-      required: true,
-      primaryKey: true,
-      size: 11
-    },
+    // IDHOTEL: {
+    //   type: 'integer',
+    //   required: true,
+    //   primaryKey: true,
+    //   size: 11
+    // },
     DESCRIPCIONHOTEL: {
       type: 'string',
       required: false,

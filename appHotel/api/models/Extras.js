@@ -6,16 +6,16 @@
  */
 
 module.exports = {
-  tableName: 'extras',
-  autoCreatedAt: false,
-  autoUpdatedAt: false,
+  // tableName: 'extras',
+  // autoCreatedAt: false,
+  // autoUpdatedAt: false,
   attributes: {
-    IDEXTRA: {
-      type: 'integer',
-      required: true,
-      primaryKey: true,
-      size: 11
-    },
+    // IDEXTRA: {
+    //   type: 'integer',
+    //   required: true,
+    //   primaryKey: true,
+    //   size: 11
+    // },
     NOMBRESERVICIO: {
       type: 'string',
       required: false,

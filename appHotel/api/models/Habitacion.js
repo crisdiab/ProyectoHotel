@@ -6,16 +6,16 @@
  */
 
 module.exports = {
-  tableName: 'habitacion',
-  autoCreatedAt: false,
-  autoUpdatedAt: false,
+  // tableName: 'habitacion',
+  // autoCreatedAt: false,
+  // autoUpdatedAt: false,
   attributes: {
-    IDHABITACION: {
-      type: 'string',
-      required: true,
-      primaryKey: true,
-      size: 10
-    },
+    // IDHABITACION: {
+    //   type: 'string',
+    //   required: true,
+    //   primaryKey: true,
+    //   size: 10
+    // },
     IDPISO: {
       type: 'integer',
       required: false,

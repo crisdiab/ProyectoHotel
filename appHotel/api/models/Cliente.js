@@ -6,16 +6,16 @@
  */
 
 module.exports = {
-  tableName: 'cliente',
-  autoCreatedAt: false,
-  autoUpdatedAt: false,
+  // tableName: 'cliente',
+  // autoCreatedAt: false,
+  // autoUpdatedAt: false,
   attributes: {
-    IDCLIENTE: {
-      type: 'integer',
-      required: true,
-      primaryKey: true,
-      size: 11
-    },
+    // IDCLIENTE: {
+    //   type: 'integer',
+    //   required: true,
+    //   primaryKey: true,
+    //   size: 11
+    // },
     NOMBRECLIENTE: {
       type: 'string',
       required: false,
