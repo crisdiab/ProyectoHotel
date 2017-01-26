@@ -6,16 +6,16 @@
  */
 
 module.exports = {
-  tableName: 'tipohabitacion',
-  autoCreatedAt: false,
-  autoUpdatedAt: false,
+  // tableName: 'tipohabitacion',
+  // autoCreatedAt: false,
+  // autoUpdatedAt: false,
   attributes: {
-    IDTIPOHABITACION: {
-      type: 'integer',
-      required: true,
-      primaryKey: true,
-      size: 11
-    },
+    // IDTIPOHABITACION: {
+    //   type: 'integer',
+    //   required: true,
+    //   primaryKey: true,
+    //   size: 11
+    // },
     COSTO: {
       type: 'decimal',
       required: false

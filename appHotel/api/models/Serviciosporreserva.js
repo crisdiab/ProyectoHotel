@@ -10,11 +10,11 @@ module.exports = {
   // autoCreatedAt: false,
   // autoUpdatedAt: false,
   attributes: {
-    IDSERVICIORESERVA: {
-      type: 'integer',
-      required: true,
-      primaryKey: true,
-      size: 11
-    }
+    // IDSERVICIORESERVA: {
+    //   type: 'integer',
+    //   required: true,
+    //   primaryKey: true,
+    //   size: 11
+    // }
   }
 };
