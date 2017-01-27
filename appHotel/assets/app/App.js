@@ -5,7 +5,6 @@ var aplicacion = angular.module('Hotel',[
   'ui.router',
   'ui.bootstrap',
   'ngResource',
-
   'xeditable',
   'ngAnimate',
   'ngCookies'

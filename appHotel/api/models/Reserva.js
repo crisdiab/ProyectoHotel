@@ -16,11 +16,8 @@ module.exports = {
     //   primaryKey: true,
     //   size: 11
     // },
-    IDCLIENTE: {
-      type: 'integer',
-      required: false,
-      index: true,
-      size: 11
+    idCliente: {
+     model:'Cliente'
     },
     CHECKIN: {
       type: 'date',

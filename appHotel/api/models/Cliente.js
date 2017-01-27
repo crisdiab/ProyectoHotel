@@ -35,6 +35,10 @@ module.exports = {
       type: 'string',
       required: false,
       size: 100
+    },
+    reservas : {
+      collection: 'reserva',
+      via: 'idCliente'
     }
   }
 };
