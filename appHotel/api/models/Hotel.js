@@ -20,6 +20,10 @@ module.exports = {
       type: 'string',
       required: false,
       size: 100
+    },
+    pisos:{
+      collection:'pisohabitacion',
+      via:'idHotel'
     }
   }
 };

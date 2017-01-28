@@ -34,6 +34,10 @@ module.exports = {
       type: 'string',
       required: false,
       size: 100
+    },
+    tipoHabitaciones:{
+      collection: 'habitacion',
+      via:'idTipoHabitacion'
     }
   }
 };

@@ -39,6 +39,7 @@ module.exports = {
     reservas : {
       collection: 'reserva',
       via: 'idCliente'
-    }
+    },
+
   }
 };

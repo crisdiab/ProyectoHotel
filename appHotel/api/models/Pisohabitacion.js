@@ -16,16 +16,18 @@ module.exports = {
     //   primaryKey: true,
     //   size: 11
     // },
-    IDHOTEL: {
-      type: 'integer',
-      required: false,
-      index: true,
-      size: 11
+    idHotel: {
+      model:'Hotel',
+
     },
     NOMBREPISO: {
       type: 'string',
       required: false,
       size: 20
+    },
+    habitaciones:{
+      collection:'habitacion',
+      via:'idPiso'
     }
   }
 };

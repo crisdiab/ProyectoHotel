@@ -16,28 +16,20 @@ module.exports = {
     //   primaryKey: true,
     //   size: 10
     // },
-    IDPISO: {
-      type: 'integer',
-      required: false,
-      index: true,
-      size: 11
+    idPiso: {
+     model: 'Pisohabitacion'
     },
     IDRESERVA: {
-      type: 'integer',
-      required: false,
-      index: true,
-      size: 11
+    model : 'Reserva'
     },
-    IDTIPOHABITACION: {
-      type: 'integer',
-      required: false,
-      index: true,
-      size: 11
-    },
+
     NUMEROHABITACION: {
       type: 'string',
       required: false,
       size: 40
+    },
+    idTipoHabitacion: {
+      model:'Tipohabitacion',
     }
   }
 };

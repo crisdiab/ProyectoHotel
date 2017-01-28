@@ -42,6 +42,16 @@ module.exports = {
     TOTALAPAGAR: {
       type: 'decimal',
       required: false
+    },
+    habitaciones:{
+      collection:'Habitacion',
+      via: 'IDRESERVA'
+    },
+    servicios: {
+      collection:'serviciosporreserva',
+      via:'idReserva'
     }
+
+
   }
 };

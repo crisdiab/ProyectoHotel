@@ -24,6 +24,10 @@ module.exports = {
     PRECIOXDIA: {
       type: 'decimal',
       required: false
+    },
+    serviciosextras:{
+      collection:'serviciosporreserva',
+      via:'idExtra'
     }
   }
 };

@@ -16,5 +16,12 @@ module.exports = {
     //   primaryKey: true,
     //   size: 11
     // }
+    idReserva: {
+      model:'Reserva'
+    },
+    idExtra : {
+      model :'Extras'
+    }
+
   }
 };
