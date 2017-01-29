@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html id="ng-app">
+<!-- id="ng-app" IE<8 -->
+
+<head>
+  <title>Hotel</title>
+
+
+
+  <link rel="stylesheet" href="bootstrap-3.3.7/dist/css/bootstrap.min.css">
+  <link rel="stylesheet" href="../styles/CodeSeven-toastr-c85e612/build/toastr.css">
+  <link rel="stylesheet" href="componentes/angular-xeditable/dist/css/xeditable.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/3.5.2/animate.min.css">
+  <link rel="stylesheet" href="../styles/font-awesome-4.7.0/css/font-awesome.min.css">
+
+
+</head>
+
+<!-- 1. nv-file-drop="" uploader="{Object}" options="{Object}" filters="{String}" -->
+
+<body ng-app="Hotel">
+<nav class="navbar navbar-default">
+  <div class="container-fluid">
+    <!-- Brand and toggle get grouped for better mobile display -->
+    <div class="navbar-header">
+      <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1" aria-expanded="false">
+        <span class="sr-only">Toggle navigation</span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+      </button>
+      <a class="navbar-brand" href="#/inicio">Inicio</a>
+    </div>
+
+
+    <!-- Collect the nav links, forms, and other content for toggling -->
+    <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+      <ul class="nav navbar-nav">
+
+        <li class="active"><a href="#/consultar">Consultar Facturas <span class="sr-only">(current)</span></a></li>
+
+        <li class="dropdown">
+          <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Ingresar <span class="caret"></span></a>
+          <ul class="dropdown-menu">
+            <li><a href="#/proveedor">Ingresar Proveedor</a></li>
+            <li><a href="#/facturapapel">Ingresar Factura Fisica </a></li>
+            <li><a href="#/facturaxml">Ingresar Factura Xml </a></li>
+
+
+
+          </ul>
+        </li>
+
+        <li class="active"><a href="#/perfil">Editar Perfil <span class="sr-only">(current)</span></a></li>
+        <li class="dropdown">
+          <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Limites por periodo <span class="caret"></span></a>
+          <ul class="dropdown-menu">
+            <li><a href="#/admin">Ingresar nuevos periodo</a></li>
+            <li><a href="#/limites">Consultar Limites </a></li>
+
+
+
+
+          </ul>
+        </li>
+
+      </ul>
+
+    </div>
+    <!-- /.navbar-collapse -->
+  </div>
+  <!-- /.container-fluid -->
+</nav>
+<div ui-view>
+
+</div>
+
+
+<!--  JQUERY -->
+
+
+
+<script src="../js/jquery-1.9.1.min.js"></script>
+<!--  BOOTSTRAP -->
+<script src="bootstrap-3.3.7/dist/js/bootstrap.min.js"></script>
+
+<!--  ANGULAR -->
+<script src="componentes/angular/angular.min.js"></script>
+
+
+<!--MODULOS ANGULAR-->
+
+<script type="text/javascript" src="libAngular/angular-ui-router.min.js"></script>
+
+<script type="text/javascript" src="libAngular/ui-bootstrap-tpls-1.3.2.min.js"></script>
+<script src="componentes/angular-animate/angular-animate.js"></script>
+<script type="text/javascript" src="libAngular/angular-resource.js"></script>
+
+<script type="text/javascript" src="../styles/CodeSeven-toastr-c85e612/toastr.js"></script>
+
+<script src="componentes/angular-xeditable/dist/js/xeditable.min.js"></script>
+<script src="componentes/angular-cookies/angular-cookies.js"></script>
+
+
+
+
+
+
+<!--APP ANGULAR-->
+<script type="text/javascript" src="App.js"></script>
+
+<!--  Factories-->
+<!--<script type="text/javascript" src="Factories/proveedorFactory.js"></script>-->
+
+<!--CONTROLADORES-->
+
+
+</body>
+
+</html>
+
