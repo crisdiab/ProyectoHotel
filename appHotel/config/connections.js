@@ -76,12 +76,12 @@ module.exports.connections = {
   ***************************************************************************/
   mechupas: {
     adapter: 'sails-postgresql',
-    host: 'ec2-54-235-92-236.compute-1.amazonaws.com',
-    user: 'vkfalfhtwgbtnl', // optional
+    host: 'ec2-54-243-185-99.compute-1.amazonaws.com',
+    user: 'wbhoazbaydalri', // optional
     ssl: true,
     port: 5432,
-    password: 'a68d9e68df93ca6cf4fb6c28d5fc7c69d8b16a63630ff776b3e41c20e3f7a645', // optional
-    database: 'ddv2m302sos5jc', //optional
+    password: '9f5485cf52950346bef733b8e571a9b9c74711847d94b172b7674e280f7a3b2d', // optional
+    database: 'ddrvg3461fri69', //optional
 
   }
 
