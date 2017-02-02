@@ -13,21 +13,21 @@ var aplicacion = angular.module('Hotel',[
 aplicacion.config(['$stateProvider','$urlRouterProvider', function($stateProvider, $urlRouterProvider) {
 
 
-  // $urlRouterProvider.otherwise("/inicio");
-  //
-  //
-  // $stateProvider
-  //   .state('login', {
-  //     url: "/login",
-  //     templateUrl: "Rutas/login.html",
-  //     controller:'LoginCtrl',
-  //     data: {
-  //       nivelAcceso: 0,
-  //       loginRequerido: false
-  //     }
-  //   })
-  //
-  // ;
+  $urlRouterProvider.otherwise("/inicio");
+
+
+  $stateProvider
+    .state('inicio', {
+      url: "/inicio",
+      templateUrl: "Rutas/inicio.html",
+      controller:'inicioCtrl',
+      // data: {
+      //   nivelAcceso: 0,
+      //   loginRequerido: false
+      // }
+    })
+
+  ;
 
 
 }]);
