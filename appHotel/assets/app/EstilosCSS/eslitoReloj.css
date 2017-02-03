@@ -1,0 +1,31 @@
+#reloj {
+  position: relative;
+  width: 200px;
+  height: 200px;
+  margin: 0 auto 0 auto;
+  background: url(http://4.bp.blogspot.com/-JWBIk7o77hQ/T43_W-LtTKI/AAAAAAAACh4/n8wev2W3XJQ/s200/reloj%2Bsin%2Bmanecillas.GIF) no-repeat;
+}
+
+#segundos, #minutos, #horas {
+   background-image: url(http://riotdesign.eu/assets/img/orologio/analogseconds.png);
+  background-position: center center;
+  height:200px;
+  width: 30px;
+  position: absolute;
+  top: 0;
+  left: 87px;
+}
+
+#segundos {
+  background-size: 320px;
+  -webkit-filter: grayscale(1);
+}
+
+#minutos {
+  background-size: 280px;
+}
+
+#horas {
+  background-size: 200px;
+  background-repeat: no-repeat;
+}
