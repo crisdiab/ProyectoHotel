@@ -26,7 +26,24 @@ aplicacion.config(['$stateProvider','$urlRouterProvider', function($stateProvide
       //   loginRequerido: false
       // }
     })
-
+      .state('gestionReserva', {
+          url: "/gestionReserva",
+          templateUrl: "Rutas/gestionReservas.html",
+          controller:'gestionReservasCtrl',
+          // data: {
+          //   nivelAcceso: 0,
+          //   loginRequerido: false
+          // }
+      })
+      .state('buscarReserva', {
+          url: "/buscar",
+          templateUrl: "Rutas/buscarReserva.html",
+          controller:'buscarReservaCtrl',
+          // data: {
+          //   nivelAcceso: 0,
+          //   loginRequerido: false
+          // }
+      })
   ;
 
 
