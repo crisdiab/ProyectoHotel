@@ -74,7 +74,7 @@ module.exports.connections = {
   *                                                                          *
   *                                                                          *
   ***************************************************************************/
-  mechupas: {
+  conexionHotel: {
     adapter: 'sails-postgresql',
     host: 'ec2-54-243-185-99.compute-1.amazonaws.com',
     user: 'wbhoazbaydalri', // optional

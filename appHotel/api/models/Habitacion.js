@@ -30,6 +30,10 @@ module.exports = {
     },
     idTipoHabitacion: {
       model:'Tipohabitacion',
+    },
+    fechas:{
+      collection:'HabitacionXfecha',
+      via:'idHabitacion'
     }
   }
 };
