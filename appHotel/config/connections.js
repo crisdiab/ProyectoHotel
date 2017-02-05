@@ -76,12 +76,13 @@ module.exports.connections = {
   ***************************************************************************/
   conexionHotel: {
     adapter: 'sails-postgresql',
-    host: 'ec2-54-243-185-99.compute-1.amazonaws.com',
-    user: 'wbhoazbaydalri', // optional
+    host: 'ec2-23-21-238-246.compute-1.amazonaws.com' +
+    '',
+    user: 'sulgwawdtfruqa', // optional
     ssl: true,
     port: 5432,
-    password: '9f5485cf52950346bef733b8e571a9b9c74711847d94b172b7674e280f7a3b2d', // optional
-    database: 'ddrvg3461fri69', //optional
+    password: '5b771971674a4938adf486b3125ec40d22c8e52a7e6d6c27364b776e5f59d114', // optional
+    database: 'd2lg2int34h3lq', //optional
 
   }
 
