@@ -16,6 +16,8 @@
     <link rel="stylesheet" href="EstilosCSS/estiloCalendario.css">
 
     <link rel="stylesheet" href="https://youtu.be/URAlxtHGWEY">
+    <link rel="stylesheet" href="EstilosCSS/estilosFooter.css">
+
 
     <script>
         //    var masterUrl='https://hotel-sw.herokuapp.com/'
@@ -25,36 +27,127 @@
 <!-- 1. nv-file-drop="" uploader="{Object}" options="{Object}" filters="{String}" -->
 
 <body ng-app="Hotel">
-    <nav class="navbar navbar-default">
-        <div class="container-fluid">
-            <!-- Brand and toggle get grouped for better mobile display -->
-            <div class="navbar-header">
-                <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1" aria-expanded="false"> <span class="sr-only">Toggle navigation</span> <span class="icon-bar"></span> <span class="icon-bar"></span> <span class="icon-bar"></span> </button> <a class="navbar-brand" href="#/inicio">Inicio</a> </div>
-            <!-- Collect the nav links, forms, and other content for toggling -->
-            <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
-                <ul class="nav navbar-nav">
-                    <li class="active"><a href="#/consultar">Consultar Facturas <span class="sr-only">(current)</span></a></li>
-                    <li class="dropdown"> <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Ingresar <span class="caret"></span></a>
-                        <ul class="dropdown-menu">
-                            <li><a href="#/proveedor">Ingresar Proveedor</a></li>
-                            <li><a href="#/facturapapel">Ingresar Factura Fisica </a></li>
-                            <li><a href="#/facturaxml">Ingresar Factura Xml </a></li>
-                        </ul>
-                    </li>
-                    <li class="active"><a href="#/perfil">Editar Perfil <span class="sr-only">(current)</span></a></li>
-                    <li class="dropdown"> <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Limites por periodo <span class="caret"></span></a>
-                        <ul class="dropdown-menu">
-                            <li><a href="#/admin">Ingresar nuevos periodo</a></li>
-                            <li><a href="#/limites">Consultar Limites </a></li>
-                        </ul>
-                    </li>
+
+
+
+
+            <nav class="navbar navbar-default navbar-inverse" role="navigation">
+                <div class="navbar-header">
+
+                    <button class="navbar-toggle" type="button" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">
+                        <span class="sr-only">Toggle navigation</span><span class="icon-bar"></span><span class="icon-bar"></span><span class="icon-bar"></span>
+                    </button> <a class="navbar-brand" href="#">Inicio</a>
+                </div>
+
+                <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+                    <ul class="nav navbar-nav">
+                        <li class="active">
+                            <a href="#">Buscar</a>
+                        </li>
+                        <li>
+                            <a href="#">Registrarse</a>
+                        </li>
+                        <li class="dropdown">
+                            <a class="dropdown-toggle" href="" data-toggle="dropdown">Reserva<strong class="caret"></strong></a>
+                            <ul class="dropdown-menu">
+                                <li>
+                                    <a href="#">Gestionar Reservas</a>
+                                </li>
+                                <li>
+                                    <a href="#">Reservar</a>
+                                </li>
+                                <li>
+                                    <a href="#">Something else here</a>
+                                </li>
+
+                            </ul>
+                        </li>
+                        <li>
+                            <a href="#">Contacto</a>
+                        </li>
+                    </ul>
+
+
+                </div>
+
+            </nav>
+
+
+
+
+            <div ui-view>
+
+            </div>
+
+
+
+    <footer>
+        <div class="container">
+            <div class="row">
+                <div class="col-md-4 col-sm-6 footerleft ">
+                    <div class="logofooter"> Ubicacion</div>
+                    <p>Nos encontramos en el mejor sector de Quito.</p>
+                    <p><i class="fa fa-map-pin"></i> Ladrón de Guevara E11·253 [PO·Box 17-01-2759]
+                        Quito · Ecuador</p>
+                    <p><i class="fa fa-phone"></i> Telefono (Ecuador) : +5939 255 666</p>
+                    <p><i class="fa fa-envelope"></i> E-mail : info@hotelpoli.com</p>
+
+                </div>
+                <div class="col-md-2 col-sm-6 paddingtop-bottom">
+                    <h6 class="heading7">Enlaces de interes</h6>
+                    <ul class="footer-ul">
+                        <li><a href="#"> Instalaciones</a></li>
+                        <li><a href="#"> Reservar</a></li>
+                        <li><a href="#"> Contactanos</a></li>
+                        <li><a href="#"> Sugerencias</a></li>
+                        <li><a href="#"> Registrarse</a></li>
+                        <li><a href="#"> Preguntas Frecuentes</a></li>
+
+                    </ul>
+                </div>
+                <div class="col-md-3 col-sm-6 paddingtop-bottom">
+                    <h6 class="heading7">Promociones</h6>
+                    <div class="post">
+                        <p>Promocion por el dia de San Valentin <span>Febrero 14,2016</span></p>
+                        <p>Promocion por Carnaval <span>Febrero 20,2016</span></p>
+
+                    </div>
+                </div>
+                <div class="col-md-3 col-sm-6 paddingtop-bottom">
+                    <h6 class="heading7">Siguenos</h6>
+                    <div class="fb-page" data-href="https://www.facebook.com/facebook" data-tabs="timeline" data-height="300" data-small-header="false" style="margin-bottom:15px;" data-adapt-container-width="true" data-hide-cover="false" data-show-facepile="true">
+                        <div class="fb-xfbml-parse-ignore">
+                            <blockquote cite="https://www.facebook.com/facebook"><a href="https://www.facebook.com/facebook">Facebook</a></blockquote>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </footer>
+    <!--footer start from here-->
+
+    <div class="copyright">
+        <div class="container">
+            <div class="col-md-6">
+                <p>WASC © 2017 - Todos los derechos Reservados</p>
+            </div>
+            <div class="col-md-6">
+                <ul class="bottom_ul">
+                    <li><a href="#">Hotel.com</a></li>
+                    <li><a href="#">Acerca de nosotros </a></li>
+                    <li><a href="#">Blog</a></li>
+                    <li><a href="#">Faqs</a></li>
+                    <li><a href="#">Contactanos</a></li>
+                    <li><a href="#">Ubicacion</a></li>
                 </ul>
             </div>
-            <!-- /.navbar-collapse -->
         </div>
-        <!-- /.container-fluid -->
-    </nav>
-    <div ui-view> </div>
+    </div>
+
+
+
+
+
     <!--  JQUERY -->
     <script src="../js/jquery-1.9.1.min.js"></script>
     <script type="text/javascript" src="CodigoJS/codigo.js"></script>
