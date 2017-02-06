@@ -13,7 +13,7 @@ var aplicacion = angular.module('Hotel',[
 aplicacion.config(['$stateProvider','$urlRouterProvider', function($stateProvider, $urlRouterProvider) {
 
 
-  // $urlRouterProvider.otherwise("/inicio");
+  $urlRouterProvider.otherwise("/inicio");
 
 
   $stateProvider
@@ -27,7 +27,7 @@ aplicacion.config(['$stateProvider','$urlRouterProvider', function($stateProvide
       // }
     })
       .state('gestionReserva', {
-          url: "/gestionReserva",
+          url: "/gestionr",
           templateUrl: "Rutas/gestionReservas.html",
           controller:'gestionReservasCtrl',
           // data: {

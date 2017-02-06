@@ -1,26 +1,37 @@
 <div class="container-fluid">
+
+    <div class="row">
+        <center><h2>Buscar habitaciones</h2></center>
+    </div>
 	<div class="row">
 		<div class="col-md-3">
-          
-          <h3>Fecha Registro</h3>
-          <input type="date" class="form-control" id="fecha" aria-describedby="ayuda" placeholder="fecha yyyy-mm-dd">
-		    
-		  <h3>Fecha Salida</h3>
-		  <input type="date" class="form-control" id="fecha" aria-describedby="ayuda" placeholder="fecha yyyy-mm-dd">
-        
-          <h3>Tipo de Habitación</h3>
-          
-          <div class="dropdown">
-            <button class="btn btn-default dropdown-toggle" type="button" id="dropdownMenu1" data-toggle="dropdown" aria-haspopup="true" aria-expanded="true">
-            Seleccionar
-            <span class="caret"></span>
-            </button>
-            <ul class="dropdown-menu" aria-labelledby="dropdownMenu1">
-              <li><a href="#">Simple</a></li>
-              <li><a href="#">Doble</a></li>
-              <li><a href="#">Triple</a></li>
-            </ul>
-          </div>
+
+            <form >
+                <div class="form-group">
+                    <label for="exampleInputEmail1">Fecha de Check-In</label>
+                    <input type="date" ng-model="fechaInicio" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" >
+                    <small id="emailHelp" class="form-text text-muted">check-in</small>
+                </div>
+                <div class="form-group">
+                    <label for="exampleInputEmail1">Fecha de Check-Out</label>
+                    <input type="date" ng-model="fechaFin" class="form-control" id="exampleInputEmail12" aria-describedby="emailHelp" >
+                    <small id="emailHelp2" class="form-text text-muted">check-out</small>
+                </div>
+
+                <div class="form-group">
+                    <label for="exampleSelect1">Tipo de Habitacion</label>
+                    <select class="form-control" ng-model="tipoHseleccionado" id="exampleSelect1">
+                        <option ng-repeat="tipoH in TiposH" value="{{tipoH}}">{{tipoH}} </option>
+
+                    </select>
+                </div>
+
+
+
+
+                <button ng-hide="mostrarBusqueda" ng-click="buscarHabitaciones(fechaInicio,fechaFin,tipoHseleccionado,Habitaciones)" class="btn btn-primary">Buscar</button>
+                <button class="btn btn-success" ng-click="nuevaBusqueda()" ng-show="mostrarBusqueda">Nueva Busqueda</button>
+            </form>
 		  	      	
 		
 	    </div>
@@ -34,24 +45,56 @@
 		       <table class="table table-hover">
                 <thead>
                   <tr>
-                    <th># Habitación</th>
-                    <th>Piso</th>
-                    <th>Tipo</th>
+                    <th>Habitación</th>
+
                   </tr>
                 </thead>
             <tbody>
-              <tr>
-                <th scope="row">1</th>
+              <tr ng-repeat="habitacion in HabitacionesXtipo">
+                <th>
+
+                    <div class="row">
+                        <div class="col-md-3">
+
+                            <img src="http://www.petitpalacearanabilbaohotel.com/uploads/galeriahabitaciones/habitacion-triple-hotel-arana-bilbao.jpg" alt="" width="200" height="200">
+
+                        </div>
+                        <div class="col-md-9">
+                            <div class="row">
+                                <h3> {{habitacion.idPiso.NOMBREPISO}}</h3>
+                                {{habitacion.idTipoHabitacion.DESCRIPCIONHABITACION}}
+                            </div>
+                            <div class="row">
+                                <div class="col-md-4">
+                                    <button class="btn btn-success">RESERVAR YA!</button></div>
+                                <div class="col-md-4">
+                                    <center><h1>DISPONIBLE POR</h1></center>
+                                </div>
+                                <div class="col-md-4">
+                                    <div class="row"></div>
+                                    <div class="row">
+
+                                    </div>
+                                    <div class="row">
+                                        <center>
+                                            {{habitacion.idTipoHabitacion.COSTO | currency}}
+                                        </center>
+                                    </div>
+
+                                </div>
+                            </div>
+
+                        </div>
+
+                    </div>
+                    <div class="row">
+
+                    </div>
+
+                   </th>
 
               </tr>
-              <tr>
-                <th scope="row">2</th>
 
-              </tr>
-              <tr>
-                <th scope="row">3</th>
-
-              </tr>
             </tbody>
           </table>
 		     
@@ -61,4 +104,26 @@
           	
 		</div>
 	
+    </div>
+
+    <!--separar fechas-->
+    <!--<br>inicio-->
+    <!--&lt;!&ndash;<br>{{separarFechaInicio(fechaInicio)}}&ndash;&gt;-->
+    <!--&lt;!&ndash;<br>fin&ndash;&gt;-->
+    <!--&lt;!&ndash;<br>{{separarFechaFin(fechaFin)}}&ndash;&gt;-->
+    <!--{{fecha }}-->
+
+    <!--fecha inicio-->
+    <!--{{fechaInicio}}-->
+    <!--<br>-->
+    <!--fecha fin-->
+    <!--{{fechaFin}}-->
+    <!--<br>-->
+    <!--tipo seleccionado-->
+    <!--{{tipoHseleccionado}}-->
+    <!--<br>-->
+    habitaciones
+    {{Habitaciones}}
+
+
 </div>
