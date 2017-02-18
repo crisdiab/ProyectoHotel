@@ -49,6 +49,10 @@ module.exports = {
     capacidad:{
       type:'integer',
       defaultsTo : 0
+    },
+    foto:{
+      type:'string',
+      defaultsTo: ''
     }
   }
 };

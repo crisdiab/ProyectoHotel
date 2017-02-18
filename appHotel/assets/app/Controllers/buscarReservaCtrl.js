@@ -5,53 +5,47 @@ aplicacion.controller('buscarReservaCtrl', [
     '$cookies',
     function ($scope, $http,$cookies) {
 
-        mostrarBusqueda=false;
+        $scope.mostrarBusqueda=false;
         $scope.Habitaciones=[];
         $scope.HabitacionesXtipo=[]
         $scope.TiposH = ['Simple','Doble','Triple','Familiar'];
         $scope.fecha={
-            diaInicio:0,
-            mesInicio:0,
-            yearInicio:0,
-            diaFin:0,
-            mesFin:0,
-            yearFin:0,
-            horas:12,
-            minutos:0
+            inicio:{
+              completa:'',
+              dia:0,
+              mes:0,
+              year:0,
+              hora:10,
+              min:0
+
+            },
+          fin:{
+            completa:'',
+            dia:0,
+            mes:0,
+            year:0,
+            hora:10,
+            min:0
+          }
         }
-        $scope.fechaInicio='2016-02-14';
-        $scope.fechaFin='2017-03-17';
-        $scope.diaJuliano=0;
-        $scope.JulianoInicio=0;
-        $scope.JulianoFin=0;
-        $scope.separarFechaInicio= function(fecha){
-            $scope.splitfecha= fecha
-            $scope.year = fecha.split('-')
-
-            $scope.fecha.diaInicio= parseInt($scope.year[2]);
-            $scope.fecha.mesInicio=parseInt($scope.year[1]);
-            $scope.fecha.yearInicio =parseInt($scope.year[0]);
-
-
-        }
-        $scope.separarFechaFin= function(fecha){
-            $scope.splitfecha= fecha
-            $scope.year2 = fecha.split('-')
-
-            $scope.fecha.diaFin= parseInt($scope.year2[2]);
-            $scope.fecha.mesFin=parseInt($scope.year2[1]);
-            $scope.fecha.yearFin =parseInt($scope.year2[0]);
-
-
+        $scope.fechaInicio='';
+        $scope.fechaFin='';
+        $scope.diaJuliano={
+          entrada:0,
+          inicial:0,
+          final:0
         }
 
+      $scope.separarFecha= function(fecha){
+
+          console.log('separar fecha',fecha)// $scope.splitfecha= fecha
+             var year = fecha.split('-')
+
+            return year;
 
 
-
-        $scope.tipoHseleccionado=''
-
-
-       $scope.Juliano= function (DD,MM,YY,HR,MN) {
+        }
+      $scope.Juliano= function (DD,MM,YY,HR,MN) {
 
 
 
@@ -95,13 +89,6 @@ aplicacion.controller('buscarReservaCtrl', [
 
                 return JD;
         }
-
-
-       // $scope.separarFecha($scope.fechaInicio)
-       // $scope.prueba=$scope.Juliano(12,04,2016,12,0)
-        //console.log('veamos prueba',$scope.prueba);
-
-
         $scope.obtenerHabitaciones = function () {
             $http.get(masterUrl+'/Habitacion')
                 .then(
@@ -116,36 +103,21 @@ aplicacion.controller('buscarReservaCtrl', [
                     });
         }
         $scope.obtenerHabitaciones()
-        $scope.buscarHabitaciones=function(Finicion,Ffin,tipo, arregloHabitaciones){
-
-            $scope.mostrarBusqueda=true;
-            console.log('llego Finico',Finicion)
-            console.log('llego ffin',Ffin)
-            console.log('llego tipo',tipo)
-            // $scope.separarFechaInicio(Finicion);
-            // $scope.separarFechaFin(Ffin);
-            for(var i = 0; i<arregloHabitaciones.length;i++){
-                if(tipo== arregloHabitaciones[i].idTipoHabitacion.TIPO){
-                    if(arregloHabitaciones[i].fechas.length==0){
-                        console.log(' entro a comparar fechas no tiene reservas en ninguna fecha',arregloHabitaciones[i].fechas.length)
-                        $scope.HabitacionesXtipo.push(arregloHabitaciones[i]);
-                    }else{
-
-                    }
-
-                }
-
-            }
-
-
-
-        }
         $scope.nuevaBusqueda = function () {
             $scope.mostrarBusqueda=false;
             $scope.HabitacionesXtipo=[];
         }
+        $scope.buscarHabitacion=function (fechaInicio,fechaFin) {
+          console.log('llego inico',fechaInicio)
+          $scope.fecha.inicio.completa=$scope.separarFecha(fechaInicio)
+          console.log("fecha inicio", $scope.fecha.inicio.completa)
+          $scope.fecha.fin.completa=fechaFin.substring(0,10);
 
-// done hiding from old browsers -->
+        }
+
+$scope.datapicler=function () {
+  $('input[name="daterange"]').daterangepicker();
+}
 
 
 

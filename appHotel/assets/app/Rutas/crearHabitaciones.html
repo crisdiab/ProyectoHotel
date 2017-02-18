@@ -8,6 +8,11 @@
     <div class="col-md-2"></div>
     <div class="col-md-8"><div class="row animated noticiaSlideInRight">
       <form ng-submit="crearHabitacion(nuevaHabitacion.idPiso)" name="habitacionForm">
+        <!--foto-->
+        <div class="form-group">
+          <label for="capacidad">Imagen de la Habitacion</label>
+          <input  ng-maxlength="100" class="form-control" type="text" name="foto" placeholder="url de la habitacion" ng-model="nuevaHabitacion.foto">
+        </div>
 
         <!--Piso-->
         <div class="form-group">
@@ -54,7 +59,7 @@
           <!--capacidad-->
           <div class="form-group">
             <label for="capacidad">Capacidad de la Habitacion</label>
-            <input ng-minlength="2" ng-maxlength="100" class="form-control" type="text" name="capacidad" placeholder="Capacidad de la habitacion" ng-model="nuevaHabitacion.capacidad">
+            <input ng-maxlength="100" class="form-control" type="text" name="capacidad" placeholder="Capacidad de la habitacion" ng-model="nuevaHabitacion.capacidad">
           </div>
           <button  type="submit" class="btn btn-primary">Crear</button>
 

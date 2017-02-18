@@ -23,6 +23,7 @@
         tipoHabitacion:$scope.tipoSeleccionado,
         costo:'',
         descripcion:'',
+        foto:'',
 
         estadoH:$scope.estadoSeleccionado,
 
@@ -94,6 +95,7 @@
                   descripcion:'',
                   capacidad:0,
                   estadoH:$scope.estadoSeleccionado,
+                  foto:''
 
                 }
 
@@ -106,8 +108,6 @@
           toastr.error('No se puede crear mas habitaciones')
         }
       }
-
-
       $scope.crearHabitacion=function (idselec) {
         //buscar cantidad de las habitaciones por piso
       $scope.contarHabitaciones(idselec);

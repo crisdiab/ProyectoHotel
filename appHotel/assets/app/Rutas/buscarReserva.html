@@ -1,3 +1,8 @@
+
+{{fechaInicio}}
+{{fechaFin}}
+{{datapicler}}
+
 <div class="container-fluid">
 
     <div class="row">
@@ -9,14 +14,11 @@
             <form >
                 <div class="form-group">
                     <label for="exampleInputEmail1">Fecha de Check-In</label>
-                    <input type="date" ng-model="fechaInicio" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" >
-                    <small id="emailHelp" class="form-text text-muted">check-in</small>
+
+
+                  <input type="text" name="daterange" value="01/01/2015 - 01/31/2015" />
                 </div>
-                <div class="form-group">
-                    <label for="exampleInputEmail1">Fecha de Check-Out</label>
-                    <input type="date" ng-model="fechaFin" class="form-control" id="exampleInputEmail12" aria-describedby="emailHelp" >
-                    <small id="emailHelp2" class="form-text text-muted">check-out</small>
-                </div>
+
 
                 <div class="form-group">
                     <label for="exampleSelect1">Tipo de Habitacion</label>
@@ -29,19 +31,19 @@
 
 
 
-                <button ng-hide="mostrarBusqueda" ng-click="buscarHabitaciones(fechaInicio,fechaFin,tipoHseleccionado,Habitaciones)" class="btn btn-primary">Buscar</button>
+                <button ng-hide="mostrarBusqueda" ng-click="buscarHabitacion(fechaInicio,fechaFin)" class="btn btn-primary">Buscar</button>
                 <button class="btn btn-success" ng-click="nuevaBusqueda()" ng-show="mostrarBusqueda">Nueva Busqueda</button>
             </form>
-		  	      	
-		
+
+
 	    </div>
-	
+
 	    <div class="col-md-9">
-         
+
          <div class="container-fluid">
 	       <div class="row">
 		     <div class="col-md-12">
-		     
+
 		       <table class="table table-hover">
                 <thead>
                   <tr>
@@ -50,80 +52,63 @@
                   </tr>
                 </thead>
             <tbody>
-              <tr ng-repeat="habitacion in HabitacionesXtipo">
-                <th>
+              <!--<tr ng-repeat="habitacion in HabitacionesXtipo">-->
+                <!--<th>-->
 
-                    <div class="row">
-                        <div class="col-md-3">
+                    <!--<div class="row">-->
+                        <!--<div class="col-md-3">-->
 
-                            <img src="http://www.petitpalacearanabilbaohotel.com/uploads/galeriahabitaciones/habitacion-triple-hotel-arana-bilbao.jpg" alt="" width="200" height="200">
+                            <!--<img src="http://www.petitpalacearanabilbaohotel.com/uploads/galeriahabitaciones/habitacion-triple-hotel-arana-bilbao.jpg" alt="" width="200" height="200">-->
 
-                        </div>
-                        <div class="col-md-9">
-                            <div class="row">
-                                <h3> {{habitacion.idPiso.NOMBREPISO}}</h3>
-                                {{habitacion.idTipoHabitacion.DESCRIPCIONHABITACION}}
-                            </div>
-                            <div class="row">
-                                <div class="col-md-4">
-                                    <button class="btn btn-success">RESERVAR YA!</button></div>
-                                <div class="col-md-4">
-                                    <center><h1>DISPONIBLE POR</h1></center>
-                                </div>
-                                <div class="col-md-4">
-                                    <div class="row"></div>
-                                    <div class="row">
+                        <!--</div>-->
+                        <!--<div class="col-md-9">-->
+                            <!--<div class="row">-->
+                                <!--<h3> {{habitacion.idPiso.NOMBREPISO}}</h3>-->
+                                <!--{{habitacion.idTipoHabitacion.DESCRIPCIONHABITACION}}-->
+                            <!--</div>-->
+                            <!--<div class="row">-->
+                                <!--<div class="col-md-4">-->
+                                    <!--<button class="btn btn-success">RESERVAR YA!</button></div>-->
+                                <!--<div class="col-md-4">-->
+                                    <!--<center><h1>DISPONIBLE POR</h1></center>-->
+                                <!--</div>-->
+                                <!--<div class="col-md-4">-->
+                                    <!--<div class="row"></div>-->
+                                    <!--<div class="row">-->
 
-                                    </div>
-                                    <div class="row">
-                                        <center>
-                                            {{habitacion.idTipoHabitacion.COSTO | currency}}
-                                        </center>
-                                    </div>
+                                    <!--</div>-->
+                                    <!--<div class="row">-->
+                                        <!--<center>-->
+                                            <!--{{habitacion.idTipoHabitacion.COSTO | currency}}-->
+                                        <!--</center>-->
+                                    <!--</div>-->
 
-                                </div>
-                            </div>
+                                <!--</div>-->
+                            <!--</div>-->
 
-                        </div>
+                        <!--</div>-->
 
-                    </div>
-                    <div class="row">
+                    <!--</div>-->
+                    <!--<div class="row">-->
 
-                    </div>
+                    <!--</div>-->
 
-                   </th>
+                   <!--</th>-->
 
-              </tr>
+              <!--</tr>-->
 
             </tbody>
           </table>
-		     
+
 		     </div>
 	       </div>
           </div>
-          	
+
 		</div>
-	
+
     </div>
 
-    <!--separar fechas-->
-    <!--<br>inicio-->
-    <!--&lt;!&ndash;<br>{{separarFechaInicio(fechaInicio)}}&ndash;&gt;-->
-    <!--&lt;!&ndash;<br>fin&ndash;&gt;-->
-    <!--&lt;!&ndash;<br>{{separarFechaFin(fechaFin)}}&ndash;&gt;-->
-    <!--{{fecha }}-->
 
-    <!--fecha inicio-->
-    <!--{{fechaInicio}}-->
-    <!--<br>-->
-    <!--fecha fin-->
-    <!--{{fechaFin}}-->
-    <!--<br>-->
-    <!--tipo seleccionado-->
-    <!--{{tipoHseleccionado}}-->
-    <!--<br>-->
-    habitaciones
-    {{Habitaciones}}
 
 
 </div>
