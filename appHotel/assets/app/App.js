@@ -44,6 +44,15 @@ aplicacion.config(['$stateProvider','$urlRouterProvider', function($stateProvide
           //   loginRequerido: false
           // }
       })
+    .state('crearHabitaciones', {
+      url: "/crearh",
+      templateUrl: "Rutas/crearHabitaciones.html",
+      controller:'crearHabitacionesCtrl',
+      // data: {
+      //   nivelAcceso: 0,
+      //   loginRequerido: false
+      // }
+    })
   ;
 
 

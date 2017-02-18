@@ -17,7 +17,7 @@ module.exports = {
     //   size: 11
     // },
     COSTO: {
-      type: 'decimal',
+      type: 'float',
       required: false
     },
     TIPO: {
@@ -35,9 +35,6 @@ module.exports = {
       required: false,
       size: 100
     },
-    tipoHabitaciones:{
-      collection: 'habitacion',
-      via:'idTipoHabitacion'
-    }
+
   }
 };

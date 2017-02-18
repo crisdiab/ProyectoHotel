@@ -1,0 +1,70 @@
+{{nuevaHabitacion||JSON}}
+{{pisoSeleccionado}}
+<br>
+{{nuevaHabitacion.capacidad}}
+
+<div class="container">
+  <div class="row">
+    <div class="col-md-2"></div>
+    <div class="col-md-8"><div class="row animated noticiaSlideInRight">
+      <form ng-submit="crearHabitacion(nuevaHabitacion.idPiso)" name="habitacionForm">
+
+        <!--Piso-->
+        <div class="form-group">
+          <label for="piso">Piso</label>
+
+          <select ng-model="nuevaHabitacion.idPiso">
+            <option ng-repeat="piso in pisos" value={{piso.id}}>{{piso.NOMBREPISO}}</option>
+          </select>
+        </div>
+        <!--num habitacion-->
+        <div class="form-group">
+          <label for="numeroHabitacion">Numero Habitacion</label>
+          <input ng-minlength="2" ng-maxlength="100" class="form-control" type="number" name="numeroh" placeholder="Numero de habitacion" ng-model="nuevaHabitacion.NUMEROHABITACION">
+        </div>
+        <!--tipo habitacion-->
+
+        <div class="form-group">
+          <label for="tipo">Tipo Habitacion</label>
+          <select required class="form-control" ng-model="nuevaHabitacion.tipoHabitacion">
+
+            <option ng-repeat="tipo in tipos" value={{tipo}}>{{tipo}}</option>
+          </select>
+        </div>
+        <!--costo-->
+        <div class="form-group">
+          <label for="costo">Costo de la Habitacion</label>
+          <input ng-minlength="2" ng-maxlength="100" class="form-control" type="number" name="costo" placeholder="Costo de la habitacion" ng-model="nuevaHabitacion.costo">
+        </div>
+
+        <!--descripcion-->
+        <div class="form-group">
+          <label for="descripcion">Descripcion de la Habitacion</label>
+          <input ng-minlength="2" ng-maxlength="100" class="form-control" type="text" name="descripcion" placeholder="Descripcion de la habitacion" ng-model="nuevaHabitacion.descripcion">
+        </div>
+
+        <!--estadoH-->
+        <div class="form-group">
+          <label for="estado">Estado Habitacion</label>
+          <select required class="form-control" ng-model="nuevaHabitacion.estadoH">
+
+            <option ng-repeat="estado in estados" value={{estado}}>{{estado}}</option>
+          </select>
+
+          <!--capacidad-->
+          <div class="form-group">
+            <label for="capacidad">Capacidad de la Habitacion</label>
+            <input ng-minlength="2" ng-maxlength="100" class="form-control" type="text" name="capacidad" placeholder="Capacidad de la habitacion" ng-model="nuevaHabitacion.capacidad">
+          </div>
+          <button  type="submit" class="btn btn-primary">Crear</button>
+
+      </form>
+      <br>
+      <br>
+    </div></div>
+    <div class="col-md-2"></div>
+
+    </div>
+
+</div>
+

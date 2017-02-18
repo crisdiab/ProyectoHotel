@@ -28,12 +28,27 @@ module.exports = {
       required: false,
       size: 40
     },
-    idTipoHabitacion: {
-      model:'Tipohabitacion',
+   tipoHabitacion:{
+      type:'string'
+   },
+    costo:{
+      type:'float',
+
+    },
+    descripcion:{
+      type:'string'
     },
     fechas:{
       collection:'HabitacionXfecha',
       via:'idHabitacion'
+    },
+    estadoH:{
+      type:'string',
+      defaultsTo : 'Habilitada'
+    },
+    capacidad:{
+      type:'integer',
+      defaultsTo : 0
     }
   }
 };
