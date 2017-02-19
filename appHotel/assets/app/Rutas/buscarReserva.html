@@ -1,7 +1,9 @@
 
-{{fechaInicio}}
-{{fechaFin}}
-{{datapicler}}
+{{date}}
+<br><br><br>
+{{fecha}}
+<br><br><br>
+{{diaJuliano}}
 
 <div class="container-fluid">
 
@@ -12,12 +14,11 @@
 		<div class="col-md-3">
 
             <form >
-                <div class="form-group">
-                    <label for="exampleInputEmail1">Fecha de Check-In</label>
-
-
-                  <input type="text" name="daterange" value="01/01/2015 - 01/31/2015" />
-                </div>
+              <div class="form-group">
+                <label for="daterange1" class="control-label">Simple picker</label>
+                <input date-range-picker id="daterange1" name="daterange1" class="form-control date-picker" type="text"
+                       ng-model="date" required/>
+              </div>
 
 
                 <div class="form-group">
@@ -27,11 +28,20 @@
 
                     </select>
                 </div>
+              <div class="row">
+                <div class="col-md-6">
+                  <!--capacidad-->
+                  <div class="form-group">
+                    <label for="adultos">Total de la Adultos</label>
+                    <input ng-maxlength="100" class="form-control" type="number" name="aultos" placeholder="Total de la adultos" ng-model="datosBusqueda.adultos">
+                  </div>
+                </div>
+              </div>
 
 
 
 
-                <button ng-hide="mostrarBusqueda" ng-click="buscarHabitacion(fechaInicio,fechaFin)" class="btn btn-primary">Buscar</button>
+                <button ng-hide="mostrarBusqueda" ng-click="buscarHabitacion()" class="btn btn-primary">Buscar</button>
                 <button class="btn btn-success" ng-click="nuevaBusqueda()" ng-show="mostrarBusqueda">Nueva Busqueda</button>
             </form>
 

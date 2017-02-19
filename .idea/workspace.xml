@@ -2,18 +2,11 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="1b33a4ae-2d7b-458a-8d38-69ba59e5d25d" name="Default" comment="">
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/appHotel/assets/app/Controllers/crearHabitacionesCtrl.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/appHotel/assets/app/Factories/habitacionFactory.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/appHotel/assets/app/Factories/pisosFactory.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/appHotel/assets/app/Rutas/crearHabitaciones.html" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/appHotel/api/models/Habitacion.js" afterPath="$PROJECT_DIR$/appHotel/api/models/Habitacion.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/appHotel/api/models/HabitacionXfecha.js" afterPath="$PROJECT_DIR$/appHotel/api/models/HabitacionXfecha.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/appHotel/api/models/Tipohabitacion.js" afterPath="$PROJECT_DIR$/appHotel/api/models/Tipohabitacion.js" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/appHotel/assets/app/App.js" afterPath="$PROJECT_DIR$/appHotel/assets/app/App.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/appHotel/assets/app/Controllers/buscarReservaCtrl.js" afterPath="$PROJECT_DIR$/appHotel/assets/app/Controllers/buscarReservaCtrl.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/appHotel/assets/app/Rutas/buscarReserva.html" afterPath="$PROJECT_DIR$/appHotel/assets/app/Rutas/buscarReserva.html" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/appHotel/assets/app/index.html" afterPath="$PROJECT_DIR$/appHotel/assets/app/index.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/appHotel/config/connections.js" afterPath="$PROJECT_DIR$/appHotel/config/connections.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/appHotel/config/models.js" afterPath="$PROJECT_DIR$/appHotel/config/models.js" />
     </list>
     <ignored path="ProyectoHotel.iws" />
     <ignored path=".idea/workspace.xml" />
@@ -36,79 +29,46 @@
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="375">
-      <file leaf-file-name="HabitacionXfecha.js" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/appHotel/api/models/HabitacionXfecha.js">
+      <file leaf-file-name="buscarReservaCtrl.js" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/appHotel/assets/app/Controllers/buscarReservaCtrl.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="578">
-              <caret line="17" column="31" lean-forward="false" selection-start-line="17" selection-start-column="6" selection-end-line="17" selection-end-column="31" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="Habitacion.js" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/appHotel/api/models/Habitacion.js">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="494">
-              <caret line="50" column="20" lean-forward="false" selection-start-line="50" selection-start-column="20" selection-end-line="50" selection-end-column="20" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="Tipohabitacion.js" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/appHotel/api/models/Tipohabitacion.js">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="596">
+            <state relative-caret-position="374">
               <caret line="37" column="0" lean-forward="false" selection-start-line="37" selection-start-column="0" selection-end-line="37" selection-end-column="0" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="Pisohabitacion.js" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/appHotel/api/models/Pisohabitacion.js">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="5">
-              <caret line="22" column="14" lean-forward="false" selection-start-line="22" selection-start-column="4" selection-end-line="22" selection-end-column="14" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="crearHabitacionesCtrl.js" pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/appHotel/assets/app/Controllers/crearHabitacionesCtrl.js">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="311">
-              <caret line="21" column="19" lean-forward="false" selection-start-line="21" selection-start-column="19" selection-end-line="21" selection-end-column="19" />
               <folding>
-                <element signature="e#867#1482#0" expanded="false" />
-                <element signature="e#908#922#0" expanded="false" />
-                <element signature="e#1615#2092#0" expanded="false" />
+                <element signature="e#361#693#0" expanded="false" />
+                <element signature="e#720#792#0" expanded="false" />
+                <element signature="e#1063#1216#0" expanded="false" />
+                <element signature="e#1265#2206#0" expanded="false" />
+                <element signature="e#2256#2658#0" expanded="false" />
+                <element signature="e#2739#2833#0" expanded="false" />
+                <element signature="e#2902#2960#0" expanded="false" />
+                <element signature="e#4125#4175#0" expanded="false" />
+                <element signature="e#4304#4368#0" expanded="false" />
+                <element signature="e#4863#5117#0" expanded="false" />
+                <element signature="e#4949#5098#0" expanded="false" />
               </folding>
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="crearHabitaciones.html" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/appHotel/assets/app/Rutas/crearHabitaciones.html">
+      <file leaf-file-name="HabitacionXfecha.js" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/appHotel/api/models/HabitacionXfecha.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="-34">
-              <caret line="56" column="86" lean-forward="false" selection-start-line="56" selection-start-column="86" selection-end-line="56" selection-end-column="86" />
+            <state relative-caret-position="144">
+              <caret line="11" column="16" lean-forward="false" selection-start-line="11" selection-start-column="4" selection-end-line="11" selection-end-column="16" />
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="pisosFactory.js" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/appHotel/assets/app/Factories/pisosFactory.js">
+      <file leaf-file-name="buscarReserva.html" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/appHotel/assets/app/Rutas/buscarReserva.html">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="476">
-              <caret line="16" column="20" lean-forward="false" selection-start-line="16" selection-start-column="20" selection-end-line="16" selection-end-column="20" />
+            <state relative-caret-position="450">
+              <caret line="35" column="160" lean-forward="false" selection-start-line="35" selection-start-column="160" selection-end-line="35" selection-end-column="160" />
               <folding>
-                <element signature="e#0#42#0" expanded="false" />
-                <marker date="1487441791427" expanded="true" signature="78:434" ph="[...]" />
-                <marker date="1487441791427" expanded="true" signature="112:433" ph="{...}" />
+                <element signature="n#table#0;n#div#0;n#div#0;n#div#0;n#div#1;n#div#1;n#div#0;n#!!top" expanded="false" />
+                <element signature="n#tbody#0;n#table#0;n#div#0;n#div#0;n#div#0;n#div#1;n#div#1;n#div#0;n#!!top" expanded="false" />
               </folding>
             </state>
           </provider>
@@ -127,6 +87,7 @@
   <component name="FindInProjectRecents">
     <findStrings>
       <find>particles</find>
+      <find>startDate</find>
     </findStrings>
   </component>
   <component name="Git.Settings">
@@ -156,20 +117,20 @@
         <option value="$PROJECT_DIR$/appHotel/assets/app/Factories/gestionResrvasFactory.js" />
         <option value="$PROJECT_DIR$/appHotel/assets/app/EstilosCSS/estilosNav.css" />
         <option value="$PROJECT_DIR$/appHotel/assets/app/EstilosCSS/estilosFooter.css" />
-        <option value="$PROJECT_DIR$/appHotel/assets/app/Rutas/buscarReserva.html" />
-        <option value="$PROJECT_DIR$/appHotel/assets/app/Controllers/buscarReservaCtrl.js" />
         <option value="$PROJECT_DIR$/appHotel/config/connections.js" />
         <option value="$PROJECT_DIR$/appHotel/config/models.js" />
         <option value="$PROJECT_DIR$/appHotel/api/models/HabitacionXfecha.js" />
         <option value="$PROJECT_DIR$/appHotel/assets/app/Factories/pisos.js" />
-        <option value="$PROJECT_DIR$/appHotel/assets/app/App.js" />
         <option value="$PROJECT_DIR$/appHotel/assets/app/Factories/habitacionFactory.js" />
-        <option value="$PROJECT_DIR$/appHotel/assets/app/index.html" />
         <option value="$PROJECT_DIR$/appHotel/assets/app/Factories/pisosFactory.js" />
         <option value="$PROJECT_DIR$/appHotel/api/models/Tipohabitacion.js" />
         <option value="$PROJECT_DIR$/appHotel/assets/app/Rutas/crearHabitaciones.html" />
         <option value="$PROJECT_DIR$/appHotel/api/models/Habitacion.js" />
         <option value="$PROJECT_DIR$/appHotel/assets/app/Controllers/crearHabitacionesCtrl.js" />
+        <option value="$PROJECT_DIR$/appHotel/assets/app/App.js" />
+        <option value="$PROJECT_DIR$/appHotel/assets/app/index.html" />
+        <option value="$PROJECT_DIR$/appHotel/assets/app/Controllers/buscarReservaCtrl.js" />
+        <option value="$PROJECT_DIR$/appHotel/assets/app/Rutas/buscarReserva.html" />
       </list>
     </option>
   </component>
@@ -635,7 +596,7 @@
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="84716000" />
+    <option name="totallyTimeSpent" value="95699000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-9" y="-9" width="1938" height="1048" extended-state="6" />
@@ -698,20 +659,6 @@
     <watches-manager />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/appHotel/package.json">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/appHotel/api/models/Cliente.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="600">
-          <caret line="25" column="22" lean-forward="false" selection-start-line="25" selection-start-column="22" selection-end-line="25" selection-end-column="22" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/appHotel/api/models/Reserva.js">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="456">
@@ -869,18 +816,10 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/appHotel/assets/app/Rutas/buscarReserva.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1007">
-          <caret line="125" column="3" lean-forward="false" selection-start-line="124" selection-start-column="3" selection-end-line="125" selection-end-column="3" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/appHotel/config/models.js">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="596">
           <caret line="29" column="4" lean-forward="false" selection-start-line="29" selection-start-column="4" selection-end-line="29" selection-end-column="4" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -888,22 +827,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="515">
           <caret line="88" column="0" lean-forward="false" selection-start-line="88" selection-start-column="0" selection-end-line="88" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/appHotel/assets/app/Controllers/buscarReservaCtrl.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="34">
-          <caret line="117" column="36" lean-forward="false" selection-start-line="117" selection-start-column="36" selection-end-line="117" selection-end-column="36" />
-          <folding>
-            <element signature="e#314#512#0" expanded="false" />
-            <element signature="e#732#1012#0" expanded="false" />
-            <element signature="e#1060#1335#0" expanded="false" />
-            <element signature="e#1427#2368#0" expanded="false" />
-            <element signature="e#2582#2984#0" expanded="false" />
-            <element signature="e#3936#4030#0" expanded="false" />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -911,15 +834,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="432">
           <caret line="18" column="20" lean-forward="false" selection-start-line="18" selection-start-column="4" selection-end-line="18" selection-end-column="20" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/appHotel/api/models/HabitacionXfecha.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="578">
-          <caret line="17" column="31" lean-forward="false" selection-start-line="17" selection-start-column="6" selection-end-line="17" selection-end-column="31" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -927,7 +841,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="374">
           <caret line="11" column="25" lean-forward="true" selection-start-line="11" selection-start-column="25" selection-end-line="11" selection-end-column="25" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -935,7 +848,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="136">
           <caret line="4" column="42" lean-forward="false" selection-start-line="4" selection-start-column="23" selection-end-line="4" selection-end-column="42" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -943,7 +855,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="102">
           <caret line="3" column="0" lean-forward="false" selection-start-line="3" selection-start-column="0" selection-end-line="16" selection-end-column="8" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -954,26 +865,6 @@
           <folding>
             <element signature="e#0#42#0" expanded="false" />
           </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/appHotel/assets/app/index.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="361">
-          <caret line="1722" column="63" lean-forward="false" selection-start-line="1722" selection-start-column="63" selection-end-line="1722" selection-end-column="63" />
-          <folding>
-            <element signature="n#footer#0;n#body#0;n#html#0;n#!!top" expanded="false" />
-            <element signature="n#div#1;n#footer#0;n#body#0;n#html#0;n#!!top" expanded="false" />
-            <element signature="n#div#2;n#body#0;n#html#0;n#!!top" expanded="false" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/appHotel/assets/app/App.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="646">
-          <caret line="49" column="39" lean-forward="false" selection-start-line="49" selection-start-column="18" selection-end-line="49" selection-end-column="39" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -993,15 +884,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="596">
           <caret line="37" column="0" lean-forward="false" selection-start-line="37" selection-start-column="0" selection-end-line="37" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/appHotel/api/models/Habitacion.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="494">
-          <caret line="50" column="20" lean-forward="false" selection-start-line="50" selection-start-column="20" selection-end-line="50" selection-end-column="20" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -1009,15 +891,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="5">
           <caret line="22" column="14" lean-forward="false" selection-start-line="22" selection-start-column="4" selection-end-line="22" selection-end-column="14" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/appHotel/assets/app/Rutas/crearHabitaciones.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-34">
-          <caret line="56" column="86" lean-forward="false" selection-start-line="56" selection-start-column="86" selection-end-line="56" selection-end-column="86" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -1025,10 +898,97 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="311">
           <caret line="21" column="19" lean-forward="false" selection-start-line="21" selection-start-column="19" selection-end-line="21" selection-end-column="19" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/appHotel/assets/app/index.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="68">
+          <caret line="1698" column="67" lean-forward="false" selection-start-line="1698" selection-start-column="67" selection-end-line="1698" selection-end-column="67" />
           <folding>
-            <element signature="e#867#1482#0" expanded="false" />
-            <element signature="e#908#922#0" expanded="false" />
-            <element signature="e#1615#2092#0" expanded="false" />
+            <element signature="n#footer#0;n#body#0;n#html#0;n#!!top" expanded="false" />
+            <element signature="n#div#1;n#footer#0;n#body#0;n#html#0;n#!!top" expanded="false" />
+            <element signature="n#div#2;n#body#0;n#html#0;n#!!top" expanded="false" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/appHotel/assets/app/App.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="102">
+          <caret line="9" column="14" lean-forward="false" selection-start-line="9" selection-start-column="14" selection-end-line="9" selection-end-column="14" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/appHotel/assets/app/componentes/angular-daterangepicker/js/angular-daterangepicker.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="182">
+          <caret line="93" column="40" lean-forward="false" selection-start-line="93" selection-start-column="31" selection-end-line="93" selection-end-column="40" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/appHotel/assets/app/componentes/angular-daterangepicker/LICENSE.md">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/appHotel/api/models/Habitacion.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="1412">
+          <caret line="50" column="20" lean-forward="false" selection-start-line="50" selection-start-column="20" selection-end-line="50" selection-end-column="20" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/appHotel/assets/app/Rutas/crearHabitaciones.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="102">
+          <caret line="58" column="10" lean-forward="false" selection-start-line="58" selection-start-column="10" selection-end-line="62" selection-end-column="16" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/appHotel/api/models/HabitacionXfecha.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="144">
+          <caret line="11" column="16" lean-forward="false" selection-start-line="11" selection-start-column="4" selection-end-line="11" selection-end-column="16" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/appHotel/assets/app/Controllers/buscarReservaCtrl.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="374">
+          <caret line="37" column="0" lean-forward="false" selection-start-line="37" selection-start-column="0" selection-end-line="37" selection-end-column="0" />
+          <folding>
+            <element signature="e#361#693#0" expanded="false" />
+            <element signature="e#720#792#0" expanded="false" />
+            <element signature="e#1063#1216#0" expanded="false" />
+            <element signature="e#1265#2206#0" expanded="false" />
+            <element signature="e#2256#2658#0" expanded="false" />
+            <element signature="e#2739#2833#0" expanded="false" />
+            <element signature="e#2902#2960#0" expanded="false" />
+            <element signature="e#4125#4175#0" expanded="false" />
+            <element signature="e#4304#4368#0" expanded="false" />
+            <element signature="e#4863#5117#0" expanded="false" />
+            <element signature="e#4949#5098#0" expanded="false" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/appHotel/assets/app/Rutas/buscarReserva.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="450">
+          <caret line="35" column="160" lean-forward="false" selection-start-line="35" selection-start-column="160" selection-end-line="35" selection-end-column="160" />
+          <folding>
+            <element signature="n#table#0;n#div#0;n#div#0;n#div#0;n#div#1;n#div#1;n#div#0;n#!!top" expanded="false" />
+            <element signature="n#tbody#0;n#table#0;n#div#0;n#div#0;n#div#0;n#div#1;n#div#1;n#div#0;n#!!top" expanded="false" />
           </folding>
         </state>
       </provider>

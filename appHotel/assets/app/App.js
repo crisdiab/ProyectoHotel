@@ -7,7 +7,8 @@ var aplicacion = angular.module('Hotel',[
   'ngResource',
   'xeditable',
   'ngAnimate',
-  'ngCookies'
+  'ngCookies',
+  'daterangepicker'
 ]);
 
 aplicacion.config(['$stateProvider','$urlRouterProvider', function($stateProvider, $urlRouterProvider) {

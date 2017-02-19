@@ -4,14 +4,14 @@ aplicacion.controller('buscarReservaCtrl', [
     '$http',
     '$cookies',
     function ($scope, $http,$cookies) {
-
+    //<editor-fold desc="variables"
         $scope.mostrarBusqueda=false;
         $scope.Habitaciones=[];
-        $scope.HabitacionesXtipo=[]
+        $scope.Habitacionesfiltradas=[];
         $scope.TiposH = ['Simple','Doble','Triple','Familiar'];
         $scope.fecha={
             inicio:{
-              completa:'',
+              completa:[],
               dia:0,
               mes:0,
               year:0,
@@ -20,7 +20,7 @@ aplicacion.controller('buscarReservaCtrl', [
 
             },
           fin:{
-            completa:'',
+            completa:[],
             dia:0,
             mes:0,
             year:0,
@@ -28,18 +28,25 @@ aplicacion.controller('buscarReservaCtrl', [
             min:0
           }
         }
-        $scope.fechaInicio='';
-        $scope.fechaFin='';
         $scope.diaJuliano={
           entrada:0,
           inicial:0,
           final:0
+
         }
+        $scope.date = {startDate: null, endDate: null};
+        $scope.datosBusqueda={
+          adultos:0,
+          ninios:0,
+        };
+        $scope.totalHuespedes=0;
+        $scope.presupuesto=0;
+        //</editor-fold>
 
       $scope.separarFecha= function(fecha){
 
           console.log('separar fecha',fecha)// $scope.splitfecha= fecha
-             var year = fecha.split('-')
+             var year = fecha.split('/')
 
             return year;
 
@@ -107,17 +114,66 @@ aplicacion.controller('buscarReservaCtrl', [
             $scope.mostrarBusqueda=false;
             $scope.HabitacionesXtipo=[];
         }
-        $scope.buscarHabitacion=function (fechaInicio,fechaFin) {
-          console.log('llego inico',fechaInicio)
-          $scope.fecha.inicio.completa=$scope.separarFecha(fechaInicio)
-          console.log("fecha inicio", $scope.fecha.inicio.completa)
-          $scope.fecha.fin.completa=fechaFin.substring(0,10);
+        $scope.buscarHabitacion=function (habitaciones) {
+          //<editor-fold desc="Convertir a julianos las dos fechas">
+        //convertir primero las dos fechas en duas julianos
+          $scope.fecha.inicio.completa=$scope.separarFecha(moment(  $scope.date.startDate).format('L'));
+          $scope.fecha.inicio.dia=$scope.fecha.inicio.completa[1];
+          $scope.fecha.inicio.mes=$scope.fecha.inicio.completa[0];
+          $scope.fecha.inicio.year=$scope.fecha.inicio.completa[2];
+          $scope.fecha.fin.completa=$scope.separarFecha(moment(  $scope.date.endDate).format('L'));
+          $scope.fecha.fin.dia=$scope.fecha.fin.completa[1];
+          $scope.fecha.fin.mes=$scope.fecha.fin.completa[0];
+          $scope.fecha.fin.year=$scope.fecha.fin.completa[2];
+        $scope.diaJuliano.inicial= Math.round( $scope.Juliano(parseInt( $scope.fecha.inicio.dia),
+            parseInt( $scope.fecha.inicio.mes),
+            parseInt( $scope.fecha.inicio.year),$scope.fecha.inicio.hora,$scope.fecha.inicio.min));
+          $scope.diaJuliano.final=Math.round($scope.Juliano(parseInt( $scope.fecha.fin.dia),
+            parseInt( $scope.fecha.fin.mes),
+            parseInt( $scope.fecha.fin.year),$scope.fecha.fin.hora,$scope.fecha.fin.min))
+          //  </editor-fold>
+          //<editor-fold desc="Calcular total de huespedes">
+         $scope.totalHuespedes=$scope.datosBusqueda.adultos+$scope.datosBusqueda.ninios;
+
+
+          //</editor-fold>
+          //<editor-fold desc="guardar habitaciones de la nueva busqueda">
+          for(var i=0;i<habitaciones.length;i++){
+              if(habitaciones[i].fechas.length==0){
+                //no tiene reservas
+                //capacidad y precio
+                if(habitaciones[i].capacidad<=$scope.totalHuespedes&&habitaciones[i].costo<=$scope.presupuesto){
+                  $scope.Habitacionesfiltradas.push(habitaciones[i]);
+                }
+
+
+            }else{
+                var contador=0;
+                for(var j=0; j<habitaciones[i].fechas.length;j++){
+                  for(var k=$scope.diaJuliano.inicial;k<$scope.diaJuliano.final;k++){
+                    if(habitaciones[i].fechas[j].fechaReserva==k){
+                      contador++;
+                    }
+
+                      }
+
+                }
+                console.log('contador',contador)
+                if(contador==0){
+                  if(habitaciones[i].capacidad<=$scope.totalHuespedes&&habitaciones[i].costo<=$scope.presupuesto){
+                    $scope.Habitacionesfiltradas.push(habitaciones[i]);
+                  }
+                }
+
+              }
+          }
+
+
+          //</editor-fold>
 
         }
 
-$scope.datapicler=function () {
-  $('input[name="daterange"]').daterangepicker();
-}
+
 
 
 
