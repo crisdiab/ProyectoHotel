@@ -4,6 +4,16 @@
 {{fecha}}
 <br><br><br>
 {{diaJuliano}}
+<br><br>
+{{datosBusqueda}}
+<br><br>
+{{total(datosBusqueda.adultos,datosBusqueda.ninios)}}
+<br><br>
+{{tipoHseleccionado}}
+<br><br>
+{{presupuesto}}
+
+
 
 <div class="container-fluid">
 
@@ -15,7 +25,7 @@
 
             <form >
               <div class="form-group">
-                <label for="daterange1" class="control-label">Simple picker</label>
+                <label for="daterange1" class="control-label">Fechas</label>
                 <input date-range-picker id="daterange1" name="daterange1" class="form-control date-picker" type="text"
                        ng-model="date" required/>
               </div>
@@ -29,11 +39,34 @@
                     </select>
                 </div>
               <div class="row">
+
                 <div class="col-md-6">
-                  <!--capacidad-->
+                    <div class=" form-group">
+                      <label for="adultos">Total de la Adultos</label>
+                      <input ng-maxlength="100" class="form-control" type="number" name="aultos" placeholder="Total de adultos" ng-model="datosBusqueda.adultos">
+
+
+                    </div>
+                    <div class="form-group">
+                      <label for="ninios">Total de niños</label>
+                      <input ng-maxlength="100" class="form-control" type="number" name="ninios" placeholder="Total de la niños" ng-model="datosBusqueda.ninios">
+                    </div>
+
+
+                  <!--adultos-->
+
                   <div class="form-group">
-                    <label for="adultos">Total de la Adultos</label>
-                    <input ng-maxlength="100" class="form-control" type="number" name="aultos" placeholder="Total de la adultos" ng-model="datosBusqueda.adultos">
+                    <label for="total">Total </label>
+                    <input ng-disabled="true" ng-maxlength="100" class="form-control" type="number" name="total" placeholder="Total " ng-model="totalHuespedes">
+                  </div>
+
+                </div>
+                <div class="form-group">
+                  <label  for="exampleInputAmount">Presupuesto (en dolares)</label>
+                  <div class="input-group">
+                    <div class="input-group-addon">$</div>
+                    <input required ng-model="presupuesto" type="text" class="form-control" id="exampleInputAmount" placeholder="Cantidad">
+
                   </div>
                 </div>
               </div>
@@ -41,7 +74,7 @@
 
 
 
-                <button ng-hide="mostrarBusqueda" ng-click="buscarHabitacion()" class="btn btn-primary">Buscar</button>
+                <button ng-hide="mostrarBusqueda" ng-click="buscarHabitacion(Habitaciones)" class="btn btn-primary">Buscar</button>
                 <button class="btn btn-success" ng-click="nuevaBusqueda()" ng-show="mostrarBusqueda">Nueva Busqueda</button>
             </form>
 
@@ -62,50 +95,32 @@
                   </tr>
                 </thead>
             <tbody>
-              <!--<tr ng-repeat="habitacion in HabitacionesXtipo">-->
-                <!--<th>-->
+              <tr ng-repeat="habitacion in Habitacionesfiltradas">
+                <th>
+                  <img src="{{habitacion.foto}}" alt="" width="200" height="200">
 
-                    <!--<div class="row">-->
-                        <!--<div class="col-md-3">-->
 
-                            <!--<img src="http://www.petitpalacearanabilbaohotel.com/uploads/galeriahabitaciones/habitacion-triple-hotel-arana-bilbao.jpg" alt="" width="200" height="200">-->
 
-                        <!--</div>-->
-                        <!--<div class="col-md-9">-->
-                            <!--<div class="row">-->
-                                <!--<h3> {{habitacion.idPiso.NOMBREPISO}}</h3>-->
-                                <!--{{habitacion.idTipoHabitacion.DESCRIPCIONHABITACION}}-->
-                            <!--</div>-->
-                            <!--<div class="row">-->
-                                <!--<div class="col-md-4">-->
-                                    <!--<button class="btn btn-success">RESERVAR YA!</button></div>-->
-                                <!--<div class="col-md-4">-->
-                                    <!--<center><h1>DISPONIBLE POR</h1></center>-->
-                                <!--</div>-->
-                                <!--<div class="col-md-4">-->
-                                    <!--<div class="row"></div>-->
-                                    <!--<div class="row">-->
+                   </th>
+                <th> <h3> Ubicado en el Piso {{habitacion.idPiso.id}}</h3>
+                  {{habitacion.descripcion}}</th>
+                <th> <center><h1>DISPONIBLE POR</h1></center>
+                  <center>
+                   <h1>{{habitacion.costo | currency}}</h1>
+                  </center></th>
+                <th>
+                  <div class="row"></div>
+                  <br><br><br><br><br><br><br>
+                  <div class="row">
+                    <button class="btn btn-success">RESERVAR YA!</button>
+                  </div>
+                  <div class="row"></div>
 
-                                    <!--</div>-->
-                                    <!--<div class="row">-->
-                                        <!--<center>-->
-                                            <!--{{habitacion.idTipoHabitacion.COSTO | currency}}-->
-                                        <!--</center>-->
-                                    <!--</div>-->
+                </th>
 
-                                <!--</div>-->
-                            <!--</div>-->
+              </tr>
 
-                        <!--</div>-->
 
-                    <!--</div>-->
-                    <!--<div class="row">-->
-
-                    <!--</div>-->
-
-                   <!--</th>-->
-
-              <!--</tr>-->
 
             </tbody>
           </table>

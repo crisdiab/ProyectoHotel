@@ -9,6 +9,7 @@ aplicacion.controller('buscarReservaCtrl', [
         $scope.Habitaciones=[];
         $scope.Habitacionesfiltradas=[];
         $scope.TiposH = ['Simple','Doble','Triple','Familiar'];
+        $scope.tipoHseleccionado=''
         $scope.fecha={
             inicio:{
               completa:[],
@@ -43,6 +44,16 @@ aplicacion.controller('buscarReservaCtrl', [
         $scope.presupuesto=0;
         //</editor-fold>
 
+      //<editor-fold desc="Calcular total de huespedes">
+      $scope.total=function (adultos ,ninios) {
+      console.log('calcula total')
+        return  $scope.totalHuespedes=adultos+ninios;
+      }
+
+
+
+
+      //</editor-fold>
       $scope.separarFecha= function(fecha){
 
           console.log('separar fecha',fecha)// $scope.splitfecha= fecha
@@ -54,18 +65,10 @@ aplicacion.controller('buscarReservaCtrl', [
         }
       $scope.Juliano= function (DD,MM,YY,HR,MN) {
 
-
-
-           console.log('valor de dd',DD)
-           console.log('valor de MM',MM)
-           console.log('valor de YY',YY)
-           console.log('valor de HR',HR)
-           console.log('valor de MN',MN)
-
             with (Math) {
 
                 HR = HR + (MN / 60);
-                console.log('CALCULO HR',HR);
+               // console.log('CALCULO HR',HR);
 
                 GGG = 1;
 
@@ -88,7 +91,7 @@ aplicacion.controller('buscarReservaCtrl', [
                 JD = JD + 1721027 + 2 * GGG + 367 * YY - 0.5;
 
                 JD = JD + (HR / 24);
-                console.log('ESTO ES JD',JD);
+               // console.log('ESTO ES JD',JD);
 
 
             }
@@ -132,18 +135,27 @@ aplicacion.controller('buscarReservaCtrl', [
             parseInt( $scope.fecha.fin.mes),
             parseInt( $scope.fecha.fin.year),$scope.fecha.fin.hora,$scope.fecha.fin.min))
           //  </editor-fold>
-          //<editor-fold desc="Calcular total de huespedes">
-         $scope.totalHuespedes=$scope.datosBusqueda.adultos+$scope.datosBusqueda.ninios;
 
-
-          //</editor-fold>
           //<editor-fold desc="guardar habitaciones de la nueva busqueda">
           for(var i=0;i<habitaciones.length;i++){
               if(habitaciones[i].fechas.length==0){
+                console.log('entro sin fechas de reserva')
+                console.log('capacidad de la habitacion',habitaciones[i].capacidad)
+                console.log('compara con  total hues',$scope.totalHuespedes)
+                console.log('costo h',habitaciones[i].costo)
+                console.log('compara con  presupuesto',$scope.presupuesto)
+                console.log('tipo h',habitaciones[i].tipoHabitacion)
+                console.log('compara con  tipo',$scope.tipoHseleccionado)
                 //no tiene reservas
                 //capacidad y precio
-                if(habitaciones[i].capacidad<=$scope.totalHuespedes&&habitaciones[i].costo<=$scope.presupuesto){
+                if( $scope.totalHuespedes<=habitaciones[i].capacidad &&
+                  habitaciones[i].costo<=$scope.presupuesto&&
+                habitaciones[i].tipoHabitacion==$scope.tipoHseleccionado){
+                  console.log('cumple todo')
                   $scope.Habitacionesfiltradas.push(habitaciones[i]);
+
+                }else{
+                  console.log('no cumple')
                 }
 
 
@@ -160,7 +172,7 @@ aplicacion.controller('buscarReservaCtrl', [
                 }
                 console.log('contador',contador)
                 if(contador==0){
-                  if(habitaciones[i].capacidad<=$scope.totalHuespedes&&habitaciones[i].costo<=$scope.presupuesto){
+                  if($scope.totalHuespedes<=habitaciones[i].capacidad&&habitaciones[i].costo<=$scope.presupuesto){
                     $scope.Habitacionesfiltradas.push(habitaciones[i]);
                   }
                 }
@@ -168,7 +180,7 @@ aplicacion.controller('buscarReservaCtrl', [
               }
           }
 
-
+            console.log('estas son las habitaciones filtras',$scope.Habitacionesfiltradas)
           //</editor-fold>
 
         }
