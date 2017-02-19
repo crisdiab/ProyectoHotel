@@ -243,7 +243,7 @@ aplicacion.controller('buscarReservaCtrl', [
               $scope.crearCh.CHECKOUT=moment(  $scope.date.endDate).format('L')
 
            // <editor-fold desc=crear reserva>
-          habitacionFactory
+          habitacionFactory//model habitacion
             .actualizar({
               id: habitacion.id
             }, {
@@ -255,12 +255,12 @@ aplicacion.controller('buscarReservaCtrl', [
               function (respuesta) {
 
                 console.log(respuesta)
-                toastr.success('reserva Exitosa')
 
-                console.log('edito correctamente',respuesta)
+
+                console.log('edito correctamente la habitacion',respuesta)
                 //<editor-fold desc=crear checkin out
 
-                buscarReservaFactory
+                buscarReservaFactory//reserva factory model
                   .save($scope.crearCh
                   )
                   .$promise
@@ -273,14 +273,17 @@ aplicacion.controller('buscarReservaCtrl', [
 
                         $scope.crearFechaReserva.fechaReserva=x;
                         console.log('crear fecha reserva en for',$scope.crearFechaReserva.fechaReserva)
-                        gestionResrvasFactory
+                        console.log('creara con esta id de habitacion',habitacion.id)
+                        gestionResrvasFactory //model reserva
                           .save($scope.crearFechaReserva2={
                             fechaReserva:x,
+                            idHabitacion:habitacion.id
                             }
                           )
                           .$promise
                           .then(
                             function(respuesta) {
+                              toastr.success('reserva Exitosa')
                               console.log('creo los julianos',respuesta)
 
 
