@@ -4,8 +4,8 @@
 aplicacion.factory('gestionResrvasFactory', ['$resource', function($resource) {
 
   var factory = $resource(
-    masterUrl+'/CLIENTE/:idCliente', {
-      idCliente: '@idCliente'
+    masterUrl+'/HabitacionXfecha/:id', {
+      id: '@id'
     }, {
       actualizar: {
         method: 'PUT',

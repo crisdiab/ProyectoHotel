@@ -102,13 +102,28 @@
                   <center>
                    <h1>{{habitacion.costo | currency}}</h1>
                   </center></th>
-                <th>
-                  <div class="row"></div>
-                  <br><br><br><br><br><br><br>
-                  <div class="row">
-                    <button class="btn btn-success">RESERVAR YA!</button>
-                  </div>
-                  <div class="row"></div>
+                <!--<th>-->
+                  <!--<div class="row"></div>-->
+                  <!--<br><br><br><br><br><br><br>-->
+                  <!--<div class="row">-->
+                    <!--<button class="btn btn-success">RESERVAR YA!</button>-->
+                  <!--</div>-->
+                  <!--<div class="row"></div>-->
+
+                <!--</th>-->
+                <th style="white-space: nowrap">
+
+                    <form editable-form name="editFactura" class="form-buttons form-inline" shown="inserted == factura" onaftersave="reservar(habitacion)">
+                      <button type="submit"  class="btn btn-primary ">
+                        <i class="fa fa-check" aria-hidden="true"></i>Reservar
+                      </button>
+
+                    </form>
+
+
+
+
+
 
                 </th>
 

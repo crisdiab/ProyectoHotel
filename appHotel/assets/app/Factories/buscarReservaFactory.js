@@ -1,8 +1,8 @@
 aplicacion.factory('buscarReservaFactory', ['$resource', function($resource) {
 
     var factory = $resource(
-        masterUrl+'/CLIENTE/:idCliente', {
-            idCliente: '@idCliente'
+        masterUrl+'/Reserva/:id', {
+            id  : '@id'
         }, {
             actualizar: {
                 method: 'PUT',

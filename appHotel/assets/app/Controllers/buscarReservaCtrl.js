@@ -1,9 +1,12 @@
 aplicacion.controller('buscarReservaCtrl', [
     '$scope',
-
+  '$uibModal',
     '$http',
     '$cookies',
-    function ($scope, $http,$cookies) {
+  'habitacionFactory',
+  'buscarReservaFactory',
+  'gestionResrvasFactory',
+    function ($scope, $uibModal,$http,$cookies,habitacionFactory,buscarReservaFactory,gestionResrvasFactory) {
     //<editor-fold desc="variables"
         $scope.bloquearForm=false;
         $scope.Habitaciones=[];
@@ -42,6 +45,14 @@ aplicacion.controller('buscarReservaCtrl', [
         };
         $scope.totalHuespedes=0;
         $scope.presupuesto=0;
+      $scope.crearCh={
+        CHECKIN:'',
+        CHECKOUT:''
+      }
+      $scope.crearFechaReserva={
+        fechaReserva:'',
+        idHabitacion:0
+      }
         //</editor-fold>
 
       //<editor-fold desc="Calcular total de huespedes">
@@ -224,6 +235,80 @@ aplicacion.controller('buscarReservaCtrl', [
             console.log('estas son las habitaciones filtras',$scope.Habitacionesfiltradas)
           //</editor-fold>
 
+        }
+        $scope.reservar=function (habitacion) {
+            console.log(habitacion)
+          $scope.crearFechaReserva.idHabitacion=habitacion.id;
+            $scope.crearCh.CHECKIN=moment(  $scope.date.startDate).format('L')
+              $scope.crearCh.CHECKOUT=moment(  $scope.date.endDate).format('L')
+
+           // <editor-fold desc=crear reserva>
+          habitacionFactory
+            .actualizar({
+              id: habitacion.id
+            }, {
+              IDRESERVA:1
+
+            })
+            .$promise
+            .then(
+              function (respuesta) {
+
+                console.log(respuesta)
+                toastr.success('reserva Exitosa')
+
+                console.log('edito correctamente',respuesta)
+                //<editor-fold desc=crear checkin out
+
+                buscarReservaFactory
+                  .save($scope.crearCh
+                  )
+                  .$promise
+                  .then(
+                    function(respuesta) {
+                      console.log('creo los ckein out',respuesta)
+                      //<editor-fold desc=crear julianos
+
+                      for(var x=$scope.diaJuliano.inicial;x<=$scope.diaJuliano.final;x++){
+
+                        $scope.crearFechaReserva.fechaReserva=x;
+                        console.log('crear fecha reserva en for',$scope.crearFechaReserva.fechaReserva)
+                        gestionResrvasFactory
+                          .save($scope.crearFechaReserva2={
+                            fechaReserva:x,
+                            }
+                          )
+                          .$promise
+                          .then(
+                            function(respuesta) {
+                              console.log('creo los julianos',respuesta)
+
+
+                            },
+                            function(error) {
+                              console.log('Error', error);
+                            }
+                          );
+
+
+                      }
+
+                      //</editor-fold>
+
+                    },
+                    function(error) {
+                      console.log('Error', error);
+                    }
+                  );
+
+                //</editor-fold
+
+
+              },
+              function (error) {
+                console.log(error);
+              });
+         // </editor-fold>
         }
 
 
