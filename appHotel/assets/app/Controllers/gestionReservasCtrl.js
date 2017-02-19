@@ -21,6 +21,7 @@ aplicacion.controller('gestionReservasCtrl', [
           function(respuesta) {
 
             $scope.reservas=respuesta;
+            console.log($scope.reservas)
           },
           function(error) {
             console.log('Error', error);
