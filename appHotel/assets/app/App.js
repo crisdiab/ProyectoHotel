@@ -54,6 +54,15 @@ aplicacion.config(['$stateProvider','$urlRouterProvider', function($stateProvide
       //   loginRequerido: false
       // }
     })
+    .state('editah', {
+      url: "/editarh",
+      templateUrl: "Rutas/EditarHabitaciones.html",
+      controller:'editarHabitacionesCtrl',
+      // data: {
+      //   nivelAcceso: 0,
+      //   loginRequerido: false
+      // }
+    })
   ;
 
 

@@ -5,10 +5,17 @@ aplicacion.controller('editarHabitacionesCtrl', [
   '$scope',
 'habitacionFactory',
   '$http',
+  '$filter',
   '$cookies',
-  function ($scope,habitacionFactory, $http,$cookies) {
+  function ($scope,habitacionFactory, $http,$filter,$cookies) {
 
 $scope.habitaciones=[];
+
+    $scope.estados = [
+      {value: 1, text: 'Habilitada'},
+      {value: 2, text: 'En mantenimiento'},
+
+    ];
 
 
 
@@ -29,6 +36,41 @@ $scope.habitaciones=[];
         );
     };
     $scope.BuscarH();
+    $scope.actualizarHabitacion=function (habitacion) {
+
+      habitacionFactory
+        .actualizar({
+        id: habitacion.id
+      }, {
+          foto:habitacion.foto,
+          capacidad:habitacion.capacidad,
+          costo:habitacion.costo,
+          descripcion:habitacion.descripcion,
+          estadoH:habitacion.estadoH
+
+
+      })
+        .$promise
+        .then(
+          function (respuesta) {
+
+            console.log(respuesta)
+            toastr.success('Datos modificados correctamente')
+            console.log('edito correctamente')
+
+          },
+          function (error) {
+            console.log(error);
+          });
+    }
+    $scope.showStatus = function(user) {
+      var selected = [];
+      if(user.estadoH) {
+        selected = $filter('filter')($scope.estados, {text: user.estadoH});
+      }
+      return selected.length ? selected[0].text : 'No establecido';
+    };
+
 
 
 

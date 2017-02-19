@@ -185,22 +185,19 @@ aplicacion.controller('buscarReservaCtrl', [
           for(var i=0;i<habitaciones.length;i++){
               if(habitaciones[i].fechas.length==0){
                 console.log('entro sin fechas de reserva')
-                // console.log('capacidad de la habitacion',habitaciones[i].capacidad)
-                // console.log('compara con  total hues',$scope.totalHuespedes)
-                // console.log('costo h',habitaciones[i].costo)
-                // console.log('compara con  presupuesto',$scope.presupuesto)
-                // console.log('tipo h',habitaciones[i].tipoHabitacion)
-                // console.log('compara con  tipo',$scope.tipoHseleccionado)
+
                 //no tiene reservas
                 //capacidad y precio
                 if( $scope.totalHuespedes<=habitaciones[i].capacidad &&
                   habitaciones[i].costo<=$scope.presupuesto&&
-                habitaciones[i].tipoHabitacion==$scope.tipoHseleccionado){
+                habitaciones[i].tipoHabitacion==$scope.tipoHseleccionado
+                &&habitaciones[i].estadoH=='Habilitada'){
                   console.log('cumple todo')
                   $scope.Habitacionesfiltradas.push(habitaciones[i]);
 
                 }else{
                   console.log('no cumple')
+                  toastr.error('Lamentamos informarle que no existen habitaciones en la fecha ingresada')
                 }
 
 
@@ -221,12 +218,14 @@ aplicacion.controller('buscarReservaCtrl', [
                 if(contador==0){
                   if( $scope.totalHuespedes<=habitaciones[i].capacidad &&
                     habitaciones[i].costo<=$scope.presupuesto&&
-                    habitaciones[i].tipoHabitacion==$scope.tipoHseleccionado){
+                    habitaciones[i].tipoHabitacion==$scope.tipoHseleccionado
+                  &&habitaciones[i].estadoH=='Habilitada'){
                     console.log('cumple todo')
                     $scope.Habitacionesfiltradas.push(habitaciones[i]);
 
                   }else{
                     console.log('no cumple')
+                    toastr.error('Lamentamos informarle que no existen habitaciones en la fecha ingresada')
                   }                }
 
               }

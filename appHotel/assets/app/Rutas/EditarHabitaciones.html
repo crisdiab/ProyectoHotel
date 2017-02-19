@@ -6,13 +6,66 @@
     <table class="table table-hover">
       <thead>
       <tr>
-        <th>Habitación</th>
+        <th>Numero de habitacion</th>
+        <th>Foto URL</th>
+        <th>Capacidad</th>
+        <th>Costo</th>
+        <th>Descripcion</th>
+        <th>Estado</th>
 
       </tr>
       </thead>
       <tbody>
       <tr ng-repeat="habitacion in habitaciones">
         <th>
+          {{habitacion.NUMEROHABITACION}}
+        </th>
+        <th>
+          <span editable-textarea="habitacion.foto" e-name="foto" e-form="editFactura" e-required>
+                  {{ habitacion.foto  || 'Sin foto' }}
+                </span>
+        </th>
+        <th>
+          <span editable-number="habitacion.capacidad" e-name="capacidad" e-form="editFactura" e-required>
+                  {{ habitacion.capacidad  || 0 }}
+                </span>
+        </th>
+        <th>
+
+           <span editable-number="habitacion.costo" e-name="capacidad" e-form="editFactura" e-required>
+                  {{ habitacion.costo  || 0 |currency}}
+                </span>
+        </th>
+        <th>
+          <span editable-textarea="habitacion.descripcion" e-name="capacidad" e-form="editFactura" e-required>
+                  {{ habitacion.descripcion  || 0 }}
+                </span>
+        </th>
+        <th>
+
+          <span editable-select="habitacion.estadoH" e-name="estado" e-form="editFactura" e-ng-options="s.text as s.text for s in estados">
+          {{ habitacion.estadoH||showStatus(habitacion) }}
+        </span>
+        </th>
+        <th style="white-space: nowrap">
+          <div ng-show="editFactura.$visible">
+            <form editable-form name="editFactura" class="form-buttons form-inline" shown="inserted == habitacion" onaftersave="actualizarHabitacion(habitacion)">
+              <button type="submit" ng-disabled="editFactura.$waiting" class="btn btn-primary btn-xs">
+                <i class="fa fa-check" aria-hidden="true"></i>
+              </button>
+
+            </form>
+
+
+            <button type="button" ng-disabled="editFactura.$waiting" ng-click="editFactura.$cancel()" class="btn btn-default btn-xs">
+              <i class="fa fa-times" aria-hidden="true"></i>
+            </button>
+          </div>
+
+          <div class="buttons" ng-show="!editFactura.$visible">
+            <button class="btn btn-primary btn-xs" ng-click="editFactura.$show()"><i class="fa fa-pencil-square-o" aria-hidden="true"></i></button>
+
+          </div>
         </th>
 
 
