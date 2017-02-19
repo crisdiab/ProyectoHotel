@@ -5,7 +5,7 @@ aplicacion.controller('buscarReservaCtrl', [
     '$cookies',
     function ($scope, $http,$cookies) {
     //<editor-fold desc="variables"
-        $scope.mostrarBusqueda=false;
+        $scope.bloquearForm=false;
         $scope.Habitaciones=[];
         $scope.Habitacionesfiltradas=[];
         $scope.TiposH = ['Simple','Doble','Triple','Familiar'];
@@ -114,10 +114,44 @@ aplicacion.controller('buscarReservaCtrl', [
         }
         $scope.obtenerHabitaciones()
         $scope.nuevaBusqueda = function () {
-            $scope.mostrarBusqueda=false;
-            $scope.HabitacionesXtipo=[];
+            $scope.bloquearForm=false;
+            $scope.Habitacionesfiltradas=[];
+          $scope.tipoHseleccionado=''
+          $scope.fecha={
+            inicio:{
+              completa:[],
+              dia:0,
+              mes:0,
+              year:0,
+              hora:10,
+              min:0
+
+            },
+            fin:{
+              completa:[],
+              dia:0,
+              mes:0,
+              year:0,
+              hora:10,
+              min:0
+            }
+          }
+          $scope.diaJuliano={
+            entrada:0,
+            inicial:0,
+            final:0
+
+          }
+          $scope.date = {startDate: null, endDate: null};
+          $scope.datosBusqueda={
+            adultos:0,
+            ninios:0,
+          };
+          $scope.totalHuespedes=0;
+          $scope.presupuesto=0;
         }
         $scope.buscarHabitacion=function (habitaciones) {
+        $scope.bloquearForm=true;
           //<editor-fold desc="Convertir a julianos las dos fechas">
         //convertir primero las dos fechas en duas julianos
           $scope.fecha.inicio.completa=$scope.separarFecha(moment(  $scope.date.startDate).format('L'));
@@ -140,12 +174,12 @@ aplicacion.controller('buscarReservaCtrl', [
           for(var i=0;i<habitaciones.length;i++){
               if(habitaciones[i].fechas.length==0){
                 console.log('entro sin fechas de reserva')
-                console.log('capacidad de la habitacion',habitaciones[i].capacidad)
-                console.log('compara con  total hues',$scope.totalHuespedes)
-                console.log('costo h',habitaciones[i].costo)
-                console.log('compara con  presupuesto',$scope.presupuesto)
-                console.log('tipo h',habitaciones[i].tipoHabitacion)
-                console.log('compara con  tipo',$scope.tipoHseleccionado)
+                // console.log('capacidad de la habitacion',habitaciones[i].capacidad)
+                // console.log('compara con  total hues',$scope.totalHuespedes)
+                // console.log('costo h',habitaciones[i].costo)
+                // console.log('compara con  presupuesto',$scope.presupuesto)
+                // console.log('tipo h',habitaciones[i].tipoHabitacion)
+                // console.log('compara con  tipo',$scope.tipoHseleccionado)
                 //no tiene reservas
                 //capacidad y precio
                 if( $scope.totalHuespedes<=habitaciones[i].capacidad &&
@@ -160,10 +194,12 @@ aplicacion.controller('buscarReservaCtrl', [
 
 
             }else{
+                console.log('entro con fechas')
                 var contador=0;
                 for(var j=0; j<habitaciones[i].fechas.length;j++){
                   for(var k=$scope.diaJuliano.inicial;k<$scope.diaJuliano.final;k++){
                     if(habitaciones[i].fechas[j].fechaReserva==k){
+
                       contador++;
                     }
 
@@ -172,10 +208,15 @@ aplicacion.controller('buscarReservaCtrl', [
                 }
                 console.log('contador',contador)
                 if(contador==0){
-                  if($scope.totalHuespedes<=habitaciones[i].capacidad&&habitaciones[i].costo<=$scope.presupuesto){
+                  if( $scope.totalHuespedes<=habitaciones[i].capacidad &&
+                    habitaciones[i].costo<=$scope.presupuesto&&
+                    habitaciones[i].tipoHabitacion==$scope.tipoHseleccionado){
+                    console.log('cumple todo')
                     $scope.Habitacionesfiltradas.push(habitaciones[i]);
-                  }
-                }
+
+                  }else{
+                    console.log('no cumple')
+                  }                }
 
               }
           }

@@ -1,17 +1,4 @@
 
-{{date}}
-<br><br><br>
-{{fecha}}
-<br><br><br>
-{{diaJuliano}}
-<br><br>
-{{datosBusqueda}}
-<br><br>
-{{total(datosBusqueda.adultos,datosBusqueda.ninios)}}
-<br><br>
-{{tipoHseleccionado}}
-<br><br>
-{{presupuesto}}
 
 
 
@@ -22,63 +9,70 @@
     </div>
 	<div class="row">
 		<div class="col-md-3">
+        <div >
+          <form  >
+            <div class="form-group">
+              <label for="daterange1" class="control-label">Fechas</label>
+              <input ng-disabled="bloquearForm"  date-range-picker id="daterange1" name="daterange1" class="form-control date-picker" type="text"
+                      ng-model="date" required/>
+            </div>
 
-            <form >
-              <div class="form-group">
-                <label for="daterange1" class="control-label">Fechas</label>
-                <input date-range-picker id="daterange1" name="daterange1" class="form-control date-picker" type="text"
-                       ng-model="date" required/>
+
+            <div class="form-group">
+              <label for="exampleSelect1">Tipo de Habitacion</label>
+              <select ng-disabled="bloquearForm" class="form-control" ng-model="tipoHseleccionado" id="exampleSelect1">
+                <option ng-repeat="tipoH in TiposH" value="{{tipoH}}">{{tipoH}} </option>
+
+              </select>
+            </div>
+            <div class="row"> <div class="form-group">
+              <label  for="exampleInputAmount">Presupuesto (en dolares)</label>
+              <div class="input-group">
+                <div class="input-group-addon">$</div>
+                <input ng-disabled="bloquearForm" required ng-model="presupuesto" type="text" class="form-control" id="exampleInputAmount" placeholder="Cantidad">
+
               </div>
+            </div></div>
+            <br>
+            <div class="row">
 
+              <div class="col-md-6">
+                <div class=" form-group">
+                  <label for="adultos">Total de la Adultos</label>
+                  <input ng-disabled="bloquearForm" ng-maxlength="100" class="form-control" type="number" name="aultos" placeholder="Total de adultos" ng-model="datosBusqueda.adultos">
+
+
+                </div>
+
+
+
+                <!--adultos-->
 
                 <div class="form-group">
-                    <label for="exampleSelect1">Tipo de Habitacion</label>
-                    <select class="form-control" ng-model="tipoHseleccionado" id="exampleSelect1">
-                        <option ng-repeat="tipoH in TiposH" value="{{tipoH}}">{{tipoH}} </option>
-
-                    </select>
+                  <label for="total">Total </label>
+                  <input  ng-disabled="true" ng-maxlength="100" class="form-control" type="number" name="total" placeholder="Total " ng-model="totalHuespedes">
                 </div>
-              <div class="row">
 
-                <div class="col-md-6">
-                    <div class=" form-group">
-                      <label for="adultos">Total de la Adultos</label>
-                      <input ng-maxlength="100" class="form-control" type="number" name="aultos" placeholder="Total de adultos" ng-model="datosBusqueda.adultos">
-
-
-                    </div>
-                    <div class="form-group">
-                      <label for="ninios">Total de niños</label>
-                      <input ng-maxlength="100" class="form-control" type="number" name="ninios" placeholder="Total de la niños" ng-model="datosBusqueda.ninios">
-                    </div>
-
-
-                  <!--adultos-->
-
-                  <div class="form-group">
-                    <label for="total">Total </label>
-                    <input ng-disabled="true" ng-maxlength="100" class="form-control" type="number" name="total" placeholder="Total " ng-model="totalHuespedes">
-                  </div>
-
-                </div>
+              </div>
+              <div class="col-md-6">
                 <div class="form-group">
-                  <label  for="exampleInputAmount">Presupuesto (en dolares)</label>
-                  <div class="input-group">
-                    <div class="input-group-addon">$</div>
-                    <input required ng-model="presupuesto" type="text" class="form-control" id="exampleInputAmount" placeholder="Cantidad">
-
-                  </div>
+                  <label for="ninios">Total de niños</label>
+                  <input ng-disabled="bloquearForm" ng-maxlength="100" class="form-control" type="number" name="ninios" placeholder="Total de la niños" ng-model="datosBusqueda.ninios">
                 </div>
               </div>
 
+            </div>
 
 
 
-                <button ng-hide="mostrarBusqueda" ng-click="buscarHabitacion(Habitaciones)" class="btn btn-primary">Buscar</button>
-                <button class="btn btn-success" ng-click="nuevaBusqueda()" ng-show="mostrarBusqueda">Nueva Busqueda</button>
-            </form>
+
+            <button ng-disabled="bloquearForm" ng-click="buscarHabitacion(Habitaciones)" class="btn btn-primary">Buscar</button>
+
+          </form>
+        </div>
 
 
+      <button class="btn btn-success" ng-click="nuevaBusqueda()" ng-show="bloquearForm">Nueva Busqueda</button>
 	    </div>
 
 	    <div class="col-md-9">

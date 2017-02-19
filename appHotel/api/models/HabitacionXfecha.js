@@ -10,7 +10,7 @@ module.exports = {
   attributes: {
 
     fechaReserva: {
-      type: 'string',
+      type: 'integer',
 
     },
     estado: {
