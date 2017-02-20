@@ -1,4 +1,4 @@
-aplicacion.controller('registrarUsuarioCtrl', [
+aplicacion.controller('ClienteCtrl', [
   '$scope',
   '$http',
 

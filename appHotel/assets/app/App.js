@@ -1,73 +1,67 @@
 /**
  * Created by Cristian on 26/01/2017.
  */
-var aplicacion = angular.module('Hotel',[
-  'ui.router',
-  'ui.bootstrap',
-  'ngResource',
-  'xeditable',
-  'ngAnimate',
-  'ngCookies',
-  'daterangepicker'
+var aplicacion = angular.module('Hotel', [
+  'ui.router'
+  , 'ui.bootstrap'
+  , 'ngResource'
+  , 'xeditable'
+  , 'ngAnimate'
+  , 'ngCookies'
+  , 'daterangepicker'
 ]);
-
-aplicacion.config(['$stateProvider','$urlRouterProvider', function($stateProvider, $urlRouterProvider) {
-
-
-  $urlRouterProvider.otherwise("/inicio");
-
-
-  $stateProvider
-    .state('inicio', {
-      url: "/inicio",
-      templateUrl: "Rutas/inicio.html",
-      controller:'inicioCtrl',
-      // data: {
-      //   nivelAcceso: 0,
-      //   loginRequerido: false
-      // }
-    })
-      .state('gestionReserva', {
-          url: "/gestionr",
-          templateUrl: "Rutas/gestionReservas.html",
-          controller:'gestionReservasCtrl',
-          // data: {
-          //   nivelAcceso: 0,
-          //   loginRequerido: false
-          // }
-      })
-      .state('buscarReserva', {
-          url: "/buscar",
-          templateUrl: "Rutas/buscarReserva.html",
-          controller:'buscarReservaCtrl',
-          // data: {
-          //   nivelAcceso: 0,
-          //   loginRequerido: false
-          // }
-      })
-    .state('crearHabitaciones', {
-      url: "/crearh",
-      templateUrl: "Rutas/crearHabitaciones.html",
-      controller:'crearHabitacionesCtrl',
-      // data: {
-      //   nivelAcceso: 0,
-      //   loginRequerido: false
-      // }
-    })
-    .state('editah', {
-      url: "/editarh",
-      templateUrl: "Rutas/EditarHabitaciones.html",
-      controller:'editarHabitacionesCtrl',
-      // data: {
-      //   nivelAcceso: 0,
-      //   loginRequerido: false
-      // }
-    })
-  ;
-
-
+aplicacion.config(['$stateProvider', '$urlRouterProvider', function ($stateProvider, $urlRouterProvider) {
+    $urlRouterProvider.otherwise("/inicio");
+    $stateProvider.state('inicio', {
+        url: "/inicio"
+        , templateUrl: "Rutas/inicio.html"
+        , controller: 'inicioCtrl'
+        , // data: {
+        //   nivelAcceso: 0,
+        //   loginRequerido: false
+        // }
+    }).state('gestionReserva', {
+        url: "/gestionr"
+        , templateUrl: "Rutas/gestionReservas.html"
+        , controller: 'gestionReservasCtrl'
+        , // data: {
+        //   nivelAcceso: 0,
+        //   loginRequerido: false
+        // }
+    }).state('buscarReserva', {
+        url: "/buscar"
+        , templateUrl: "Rutas/buscarReserva.html"
+        , controller: 'buscarReservaCtrl'
+        , // data: {
+        //   nivelAcceso: 0,
+        //   loginRequerido: false
+        // }
+    }).state('crearHabitaciones', {
+        url: "/crearh"
+        , templateUrl: "Rutas/crearHabitaciones.html"
+        , controller: 'crearHabitacionesCtrl'
+        , // data: {
+        //   nivelAcceso: 0,
+        //   loginRequerido: false
+        // }
+    }).state('cliente', {
+        url: "/registrarse"
+        , templateUrl: "rutas/cliente.html"
+        , controller: 'ClienteCtrl'
+        , data: {
+            nivelAcceso: 0
+            , loginRequerido: false
+        }
+    }).state('editah', {
+        url: "/editarh"
+        , templateUrl: "Rutas/EditarHabitaciones.html"
+        , controller: 'editarHabitacionesCtrl'
+        , // data: {
+        //   nivelAcceso: 0,
+        //   loginRequerido: false
+        // }
+    });
 }]);
-
 // aplicacion.run(function ($rootScope, $cookies, $state)  {
 //   console.log('entro run');
 //
